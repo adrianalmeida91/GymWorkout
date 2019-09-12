@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioButtonView" customModule="GymWorkout" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="LqJ-5f-nPm"/>
+                <outlet property="radioButtonAB" destination="95J-22-X4N" id="28R-SV-BfM"/>
+                <outlet property="radioButtonABC" destination="7VE-rm-cs4" id="vkQ-3h-BsO"/>
+                <outlet property="radioButtonABCD" destination="ol7-Sr-ZBr" id="gRc-ck-HaM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="xKN-uR-fsT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95J-22-X4N">
+                            <rect key="frame" x="0.0" y="0.0" width="95" height="56"/>
+                            <state key="normal" title="A/B" image="unchecked_2">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" image="checked_2"/>
+                            <connections>
+                                <action selector="radioButtonPressed:" destination="-1" eventType="touchUpInside" id="DGd-6y-7bA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VE-rm-cs4">
+                            <rect key="frame" x="155" y="0.0" width="71" height="56"/>
+                            <state key="normal" title="A/B/C" image="unchecked_2">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" image="checked_2"/>
+                            <connections>
+                                <action selector="radioButtonPressed:" destination="-1" eventType="touchUpInside" id="4ay-je-SYu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol7-Sr-ZBr">
+                            <rect key="frame" x="286" y="0.0" width="89" height="56"/>
+                            <state key="normal" title="A/B/C/D" image="unchecked_2">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" image="checked_2"/>
+                            <connections>
+                                <action selector="radioButtonPressed:" destination="-1" eventType="touchUpInside" id="qXY-ic-TaO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="xKN-uR-fsT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2mB-Of-btM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xKN-uR-fsT" secondAttribute="trailing" id="Pyo-WV-xPL"/>
+                <constraint firstItem="xKN-uR-fsT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ut5-SE-SDs"/>
+                <constraint firstItem="xKN-uR-fsT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gf5-C0-jy3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xKN-uR-fsT" secondAttribute="bottom" id="mc8-Ru-mgI"/>
+                <constraint firstItem="xKN-uR-fsT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sKw-hZ-o2U"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="42.028985507246382" y="-222.32142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checked_2" width="24" height="24"/>
+        <image name="unchecked_2" width="24" height="24"/>
+    </resources>
+</document>

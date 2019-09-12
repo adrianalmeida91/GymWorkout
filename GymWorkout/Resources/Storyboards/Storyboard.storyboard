@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WIQ-GF-May">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Treinos-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutViewController" id="BYZ-38-t0r" customClass="WorkoutViewController" customModule="GymWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rhS-dc-6Is">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.84518045774647887" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.85403829225352113" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rhS-dc-6Is" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0jj-pl-xTb"/>
+                            <constraint firstItem="rhS-dc-6Is" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8rs-Nu-kaa"/>
+                            <constraint firstItem="rhS-dc-6Is" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jdg-cy-BIo"/>
+                            <constraint firstItem="rhS-dc-6Is" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uOn-e3-cQz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Treinos" id="BJd-yt-BNj">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0bi-cO-Bje"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="81P-ov-oQ0"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addWorkout" destination="81P-ov-oQ0" id="uEV-fM-aIH"/>
+                        <outlet property="workoutsTableView" destination="rhS-dc-6Is" id="HNL-PN-S6Z"/>
+                        <segue destination="GcW-nC-ysq" kind="show" id="u1q-YA-S45"/>
+                        <segue destination="eBa-sI-JsC" kind="show" id="Vi0-Bo-XOa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.60000000000002" y="754.27286356821594"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H3e-rg-sPg">
+            <objects>
+                <viewController id="eBa-sI-JsC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ll7-Tz-BA5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zFZ-RO-L4o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTa-RY-uh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952" y="1123"/>
+        </scene>
+        <!--Criar Treino-->
+        <scene sceneID="23Z-UW-15a">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutCreateViewController" id="GcW-nC-ysq" customClass="WorkoutCreateViewController" customModule="GymWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0vB-zO-Yc8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome do treino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ruY-IM-Zeh" customClass="CustomTextField" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="109" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Inicio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg2-Zz-m2d">
+                                <rect key="frame" x="20" y="163" width="107" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="gy3-KV-9kk"/>
+                                    <constraint firstAttribute="height" constant="21" id="mxq-ez-glY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha a data de inicio do treino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-hU-Q6v" customClass="CustomTextField" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="192" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDo-Ue-gaf">
+                                <rect key="frame" x="20" y="246" width="82" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="4R6-Zh-FAX"/>
+                                    <constraint firstAttribute="height" constant="21" id="Qwy-LG-uED"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha a data final do treino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="auh-0a-98r" customClass="CustomTextField" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="275" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTv-UM-OsZ">
+                                <rect key="frame" x="20" y="80" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KMY-Ov-3WH"/>
+                                    <constraint firstAttribute="width" constant="50" id="rlh-BX-GKZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23X-Jb-ZZk">
+                                <rect key="frame" x="20" y="329" width="40" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vb1-Es-fEo" customClass="RadioButtonView" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="334" width="335" height="56"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.84518045774647887" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mwv-YT-4iq" firstAttribute="trailing" secondItem="ruY-IM-Zeh" secondAttribute="trailing" constant="20" id="06i-xT-LBm"/>
+                            <constraint firstItem="Vb1-Es-fEo" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="1OX-GQ-A7b"/>
+                            <constraint firstItem="GTv-UM-OsZ" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="7Kw-HP-CxC"/>
+                            <constraint firstItem="GTv-UM-OsZ" firstAttribute="top" secondItem="mwv-YT-4iq" secondAttribute="top" constant="16" id="80I-Rq-Wf0"/>
+                            <constraint firstItem="23X-Jb-ZZk" firstAttribute="top" secondItem="auh-0a-98r" secondAttribute="bottom" constant="24" id="8t3-CE-tem"/>
+                            <constraint firstItem="mwv-YT-4iq" firstAttribute="trailing" secondItem="Vb1-Es-fEo" secondAttribute="trailing" constant="20" id="9yU-zX-lqf"/>
+                            <constraint firstItem="FDo-Ue-gaf" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="EJp-cM-gJn"/>
+                            <constraint firstItem="mwv-YT-4iq" firstAttribute="trailing" secondItem="auh-0a-98r" secondAttribute="trailing" constant="20" id="NS2-5K-QUj"/>
+                            <constraint firstItem="mwv-YT-4iq" firstAttribute="trailing" secondItem="tJC-hU-Q6v" secondAttribute="trailing" constant="20" id="Vkz-sk-8zk"/>
+                            <constraint firstItem="mwv-YT-4iq" firstAttribute="trailing" secondItem="23X-Jb-ZZk" secondAttribute="trailing" constant="315" id="cT0-Xw-miT"/>
+                            <constraint firstItem="ruY-IM-Zeh" firstAttribute="top" secondItem="GTv-UM-OsZ" secondAttribute="bottom" constant="8" id="dzu-Yk-7YP"/>
+                            <constraint firstItem="FDo-Ue-gaf" firstAttribute="top" secondItem="tJC-hU-Q6v" secondAttribute="bottom" constant="24" id="e9Y-uN-ri9"/>
+                            <constraint firstItem="tJC-hU-Q6v" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="ejW-OA-MCe"/>
+                            <constraint firstItem="auh-0a-98r" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="jxn-qP-dOd"/>
+                            <constraint firstItem="fg2-Zz-m2d" firstAttribute="top" secondItem="ruY-IM-Zeh" secondAttribute="bottom" constant="24" id="oqF-PD-6aJ"/>
+                            <constraint firstItem="ruY-IM-Zeh" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="q2n-en-Zsp"/>
+                            <constraint firstItem="Vb1-Es-fEo" firstAttribute="top" secondItem="23X-Jb-ZZk" secondAttribute="bottom" constant="8" id="tFS-aj-pRc"/>
+                            <constraint firstItem="auh-0a-98r" firstAttribute="top" secondItem="FDo-Ue-gaf" secondAttribute="bottom" constant="8" id="uz2-QA-kX8"/>
+                            <constraint firstItem="tJC-hU-Q6v" firstAttribute="top" secondItem="fg2-Zz-m2d" secondAttribute="bottom" constant="8" id="w8T-Rx-acd"/>
+                            <constraint firstItem="fg2-Zz-m2d" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="wQw-qc-Mxd"/>
+                            <constraint firstItem="23X-Jb-ZZk" firstAttribute="leading" secondItem="mwv-YT-4iq" secondAttribute="leading" constant="20" id="wha-u8-w5Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mwv-YT-4iq"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Criar Treino" id="Sdj-Bt-pBD">
+                        <barButtonItem key="backBarButtonItem" title=" " id="bDo-9h-rvq"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="PLf-ug-wCa"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="endTextField" destination="auh-0a-98r" id="IfC-1Q-TKv"/>
+                        <outlet property="nameTextField" destination="ruY-IM-Zeh" id="s9Z-mn-G6Q"/>
+                        <outlet property="radioButtonGroup" destination="Vb1-Es-fEo" id="ZNo-sb-CQA"/>
+                        <outlet property="saveWorkout" destination="PLf-ug-wCa" id="W6P-Cq-uDe"/>
+                        <outlet property="startTextField" destination="tJC-hU-Q6v" id="Arc-8A-kCG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hx-A4-znh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954.4000000000001" y="358.4707646176912"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SUo-fn-JOh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WIQ-GF-May" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1at-Jo-Urf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6RU-yE-gpR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNs-h5-2CW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="754.6875"/>
+        </scene>
+    </scenes>
+</document>

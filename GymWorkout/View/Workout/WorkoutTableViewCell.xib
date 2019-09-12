@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTableViewCell" rowHeight="80" id="PTn-qZ-doh" customClass="WorkoutTableViewCell" customModule="GymWorkout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PTn-qZ-doh" id="Ut9-Xb-WRo">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do treino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATg-Ta-Une">
+                        <rect key="frame" x="10" y="10" width="134" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fim:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNn-MV-ItH">
+                        <rect key="frame" x="10" y="55" width="28" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ínicio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pR-Ry-9lz">
+                        <rect key="frame" x="10" y="36" width="39" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0pR-Ry-9lz" firstAttribute="leading" secondItem="Ut9-Xb-WRo" secondAttribute="leading" constant="10" id="9NR-jp-rbD"/>
+                    <constraint firstItem="ATg-Ta-Une" firstAttribute="leading" secondItem="Ut9-Xb-WRo" secondAttribute="leading" constant="10" id="G1M-b7-nQH"/>
+                    <constraint firstItem="ATg-Ta-Une" firstAttribute="top" secondItem="Ut9-Xb-WRo" secondAttribute="top" constant="10" id="McF-pW-O0W"/>
+                    <constraint firstItem="dNn-MV-ItH" firstAttribute="top" secondItem="0pR-Ry-9lz" secondAttribute="bottom" constant="2" id="XQ4-jE-vzD"/>
+                    <constraint firstItem="dNn-MV-ItH" firstAttribute="leading" secondItem="Ut9-Xb-WRo" secondAttribute="leading" constant="10" id="izb-LF-RDN"/>
+                    <constraint firstItem="0pR-Ry-9lz" firstAttribute="top" secondItem="ATg-Ta-Une" secondAttribute="bottom" constant="2" id="q9E-fx-bEE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="workoutEnd" destination="dNn-MV-ItH" id="wOz-F8-k0K"/>
+                <outlet property="workoutName" destination="ATg-Ta-Une" id="b2e-PU-vPR"/>
+                <outlet property="workoutStart" destination="0pR-Ry-9lz" id="EHX-B2-R3R"/>
+            </connections>
+            <point key="canvasLocation" x="151.44927536231884" y="97.098214285714278"/>
+        </tableViewCell>
+    </objects>
+</document>
