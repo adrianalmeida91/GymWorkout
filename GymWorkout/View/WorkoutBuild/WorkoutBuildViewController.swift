@@ -1,5 +1,5 @@
 //
-//  WorkoutCreateViewController.swift
+//  WorkoutBuildViewController.swift
 //  GymWorkout
 //
 //  Created by Adrian de Almeida on 01/09/19.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class WorkoutCreateViewController: BaseViewController {
+class WorkoutBuildViewController: BaseViewController {
 
     @IBOutlet weak var nameTextField: CustomTextField!
     @IBOutlet weak var startTextField: CustomTextField!
@@ -21,7 +21,7 @@ class WorkoutCreateViewController: BaseViewController {
     private var disposeBag = DisposeBag()
     private var activeTextField: UITextField? = nil
     private var isFieldValid = false
-    var viewModel: WorkoutCreateViewModel!
+    var viewModel: WorkoutBuildViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,7 @@ class WorkoutCreateViewController: BaseViewController {
         let datePicker = UIDatePicker()
         datePicker.locale = Locale.init(identifier: "pt_BR")
         datePicker.datePickerMode = .date
-        datePicker.addTarget(self, action: #selector(WorkoutCreateViewController.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
+        datePicker.addTarget(self, action: #selector(WorkoutBuildViewController.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
         textField.inputAccessoryView = toolbar
         textField.inputView = datePicker
         textField.tintColor = UIColor.clear
@@ -86,6 +86,7 @@ class WorkoutCreateViewController: BaseViewController {
         workout.startDate = self.startTextField.text!
         workout.endDate = self.endTextField.text!
         workout.type = self.radioButtonGroup.radioButtonSelected.value
+
         self.viewModel.createWorkout(workout: workout).subscribe({ result in
             switch result {
             case .completed:
@@ -97,7 +98,7 @@ class WorkoutCreateViewController: BaseViewController {
     }
 }
 
-extension WorkoutCreateViewController: UITextFieldDelegate {
+extension WorkoutBuildViewController: UITextFieldDelegate {
     internal func textFieldDidBeginEditing(_ textField: UITextField) {
         clearTextFields(textField)
         if textField === startTextField || textField === endTextField {

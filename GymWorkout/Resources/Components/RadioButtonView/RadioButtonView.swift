@@ -50,7 +50,6 @@ class RadioButtonView: UIView {
                 self.radioButtonABC.isSelected = true
             case .abcd:
                 self.radioButtonABCD.isSelected = true
-
             }
         }).disposed(by: disposeBag)
     }

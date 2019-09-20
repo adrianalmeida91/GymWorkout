@@ -20,13 +20,40 @@ class BaseViewController: UIViewController {
         }
     }
 
-    func showWorkoutCreate() {
-        let workoutCreateViewController = navigationController?.viewControllers.filter { $0 is WorkoutCreateViewController }.first
-        if let workoutCreateViewController = workoutCreateViewController {
-            self.navigationController?.popToViewController(workoutCreateViewController, animated: true)
+    func showWorkoutBuild() {
+        let workoutBuildViewController = navigationController?.viewControllers.filter { $0 is WorkoutBuildViewController }.first
+        if let workoutBuildViewController = workoutBuildViewController {
+            self.navigationController?.popToViewController(workoutBuildViewController, animated: true)
         } else {
-            if let workoutCreateViewController = AppDelegate().container.resolve(WorkoutCreateViewController.self) {
-                self.navigationController?.pushViewController(workoutCreateViewController, animated: true)
+            if let workoutBuildViewController = AppDelegate().container.resolve(WorkoutBuildViewController.self) {
+                self.navigationController?.pushViewController(workoutBuildViewController, animated: true)
+            }
+        }
+    }
+
+    func showExercices(workout: Workout) {
+        let exercicesViewController = navigationController?.viewControllers.filter { $0 is
+            ExercicesViewController }.first
+        if let exercicesViewController = exercicesViewController {
+            self.navigationController?.popToViewController(exercicesViewController, animated: true)
+        } else {
+            if let exercicesViewController = AppDelegate().container.resolve(ExercicesViewController.self) {
+                exercicesViewController.workout = workout
+                self.navigationController?.pushViewController(exercicesViewController, animated: true)
+            }
+        }
+    }
+
+    func showExerciceCreate(workout: Workout, exerciceType: ExerciceType) {
+        let exerciceCreateViewController = navigationController?.viewControllers.filter { $0 is
+            ExerciceCreateViewController }.first
+        if let exerciceCreateViewController = exerciceCreateViewController {
+            self.navigationController?.popToViewController(exerciceCreateViewController, animated: true)
+        } else {
+            if let exerciceCreateViewController = AppDelegate().container.resolve(ExerciceCreateViewController.self) {
+                exerciceCreateViewController.workout = workout
+                exerciceCreateViewController.exerciceType = exerciceType
+                self.navigationController?.pushViewController(exerciceCreateViewController, animated: true)
             }
         }
     }

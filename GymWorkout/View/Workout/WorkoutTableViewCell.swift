@@ -14,9 +14,9 @@ class WorkoutTableViewCell: UITableViewCell {
     @IBOutlet weak var workoutStart: UILabel!
     @IBOutlet weak var workoutEnd: UILabel!
 
-    func setLabels(name: String, start: String, end: String) {
-        self.workoutName.text = name
-        self.workoutStart.text = start
-        self.workoutEnd.text = end
+    func setLabels(workout: Workout) {
+        self.workoutName.text = workout.name
+        self.workoutStart.text = workout.startDate
+        self.workoutEnd.text = workout.endDate
     }
 }

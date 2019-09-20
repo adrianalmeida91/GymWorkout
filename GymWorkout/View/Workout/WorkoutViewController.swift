@@ -27,7 +27,7 @@ class WorkoutViewController: BaseViewController {
 
     func setupViews() {
         addWorkout.rx.tap.bind {
-            self.showWorkoutCreate()
+            self.showWorkoutBuild()
         }.disposed(by: disposeBag)
         viewModel.workouts.drive(onNext: { workouts in
             self.workouts = workouts.reversed()
@@ -39,6 +39,7 @@ class WorkoutViewController: BaseViewController {
         workoutsTableView.backgroundColor = UIColor.clear
         workoutsTableView.separatorColor = UIColor.black
         workoutsTableView.dataSource = self
+        workoutsTableView.delegate = self
         workoutsTableView.register(R.nib.workoutTableViewCell)
     }
 
@@ -48,7 +49,7 @@ class WorkoutViewController: BaseViewController {
     }
 }
 
-extension WorkoutViewController: UITableViewDataSource {
+extension WorkoutViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (workouts.count == 0) {
             tableView.setEmptyView(message: "Nenhum treino cadastrado.\nClique no + para adicionar.")
@@ -60,7 +61,7 @@ extension WorkoutViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.workoutTableViewCell, for: indexPath)!
-        cell.setLabels(name: self.workouts[indexPath.row].name, start: self.workouts[indexPath.row].startDate, end: self.workouts[indexPath.row].endDate)
+        cell.setLabels(workout: self.workouts[indexPath.row])
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
@@ -72,7 +73,7 @@ extension WorkoutViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let alert = DeleteConfirmAlert(title: "Tem certeza que deseja deletar?", message: "Deletar: \(self.workouts[indexPath.row].name)\nEssa ação não poderá ser desfeita.")
+            let alert = DeleteConfirmAlert(title: "Tem certeza que deseja deletar?", message: "Deletar o treino: \(self.workouts[indexPath.row].name)\nEssa ação não poderá ser desfeita.")
             alert.show(navigationController: navigationController!, onConfirm: {
                 self.viewModel.removeWorkout(workout: self.workouts[indexPath.row]).subscribe({ result in
                     switch result {
@@ -85,5 +86,13 @@ extension WorkoutViewController: UITableViewDataSource {
                 }).disposed(by: self.disposeBag)
             })
         }
+    }
+
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Deletar"
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showExercices(workout: workouts[indexPath.row])
     }
 }

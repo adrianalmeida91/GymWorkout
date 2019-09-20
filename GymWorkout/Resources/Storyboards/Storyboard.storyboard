@@ -48,25 +48,57 @@
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="754.27286356821594"/>
         </scene>
-        <!--View Controller-->
+        <!--Exercicios-->
         <scene sceneID="H3e-rg-sPg">
             <objects>
-                <viewController id="eBa-sI-JsC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExercicesViewController" id="eBa-sI-JsC" customClass="ExercicesViewController" customModule="GymWorkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ll7-Tz-BA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5be-kH-Do9">
+                                <rect key="frame" x="20" y="80" width="335" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eAx-J6-row">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zFZ-RO-L4o" firstAttribute="trailing" secondItem="5be-kH-Do9" secondAttribute="trailing" constant="20" id="Aco-Iu-63x"/>
+                            <constraint firstItem="zFZ-RO-L4o" firstAttribute="bottom" secondItem="eAx-J6-row" secondAttribute="bottom" id="Jxi-TR-fnT"/>
+                            <constraint firstItem="5be-kH-Do9" firstAttribute="top" secondItem="zFZ-RO-L4o" secondAttribute="top" constant="16" id="QHr-F5-6JA"/>
+                            <constraint firstItem="zFZ-RO-L4o" firstAttribute="trailing" secondItem="eAx-J6-row" secondAttribute="trailing" id="SPQ-9g-ba0"/>
+                            <constraint firstItem="5be-kH-Do9" firstAttribute="leading" secondItem="zFZ-RO-L4o" secondAttribute="leading" constant="20" id="cHa-Vx-7ig"/>
+                            <constraint firstItem="eAx-J6-row" firstAttribute="leading" secondItem="zFZ-RO-L4o" secondAttribute="leading" id="eqP-1E-PDF"/>
+                            <constraint firstItem="eAx-J6-row" firstAttribute="top" secondItem="5be-kH-Do9" secondAttribute="bottom" constant="16" id="uUZ-2Q-Jgz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zFZ-RO-L4o"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Exercicios" id="Yt6-qU-W18">
+                        <barButtonItem key="backBarButtonItem" title=" " id="UHC-2l-bbr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nDd-43-Nmb"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addExercice" destination="nDd-43-Nmb" id="Sc5-TT-ist"/>
+                        <outlet property="exercicesTableView" destination="eAx-J6-row" id="KjA-V2-uQZ"/>
+                        <outlet property="segmentedControl" destination="5be-kH-Do9" id="asH-ne-CA9"/>
+                        <segue destination="Nof-lw-4Iq" kind="show" id="WR8-Sh-qUG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTa-RY-uh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="1123"/>
+            <point key="canvasLocation" x="1951.2" y="1122.1889055472266"/>
         </scene>
         <!--Criar Treino-->
         <scene sceneID="23Z-UW-15a">
             <objects>
-                <viewController storyboardIdentifier="WorkoutCreateViewController" id="GcW-nC-ysq" customClass="WorkoutCreateViewController" customModule="GymWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutBuildViewController" id="GcW-nC-ysq" customClass="WorkoutBuildViewController" customModule="GymWorkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0vB-zO-Yc8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,6 +202,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hx-A4-znh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1954.4000000000001" y="358.4707646176912"/>
+        </scene>
+        <!--Criar Exercício-->
+        <scene sceneID="cfd-lP-9Dr">
+            <objects>
+                <viewController storyboardIdentifier="ExerciceCreateViewController" id="Nof-lw-4Iq" customClass="ExerciceCreateViewController" customModule="GymWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ecz-FU-yhW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-qY-uLW">
+                                <rect key="frame" x="20" y="80" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome do exercício" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-9z-BVM" customClass="CustomTextField" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="109" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Séries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUy-bj-Tkb">
+                                <rect key="frame" x="20" y="163" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repetições" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-IS-IXD">
+                                <rect key="frame" x="20" y="246" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o número de repetições" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laq-XM-Qew" customClass="CustomTextField" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="275" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso (Kg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbE-FI-neU">
+                                <rect key="frame" x="20" y="329" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a quantidade de séries" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9I8-7V-Ig4" customClass="CustomTextField" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="192" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bq4-mc-ZEx" customClass="CustomSliderView" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="358" width="335" height="50"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.84518045770000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bq4-mc-ZEx" firstAttribute="top" secondItem="jbE-FI-neU" secondAttribute="bottom" constant="8" id="2nN-NF-4YM"/>
+                            <constraint firstItem="a8s-5o-78p" firstAttribute="trailing" secondItem="Wyr-9z-BVM" secondAttribute="trailing" constant="20" id="7Lo-f7-iGh"/>
+                            <constraint firstItem="Wyr-9z-BVM" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="90A-Vx-6o7"/>
+                            <constraint firstItem="0P4-qY-uLW" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="A7o-Km-z7l"/>
+                            <constraint firstItem="0P4-qY-uLW" firstAttribute="top" secondItem="a8s-5o-78p" secondAttribute="top" constant="16" id="Heb-m8-Sth"/>
+                            <constraint firstItem="jbE-FI-neU" firstAttribute="top" secondItem="laq-XM-Qew" secondAttribute="bottom" constant="24" id="Mf8-N9-lgm"/>
+                            <constraint firstItem="cUy-bj-Tkb" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="Mlr-a8-qcs"/>
+                            <constraint firstItem="a8s-5o-78p" firstAttribute="trailing" secondItem="bq4-mc-ZEx" secondAttribute="trailing" constant="20" id="Pb4-Wg-pDC"/>
+                            <constraint firstItem="bq4-mc-ZEx" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="Poq-At-9Aw"/>
+                            <constraint firstItem="9I8-7V-Ig4" firstAttribute="top" secondItem="cUy-bj-Tkb" secondAttribute="bottom" constant="8" id="Rn7-nu-dsu"/>
+                            <constraint firstItem="9I8-7V-Ig4" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="Sse-ag-PSj"/>
+                            <constraint firstItem="jbE-FI-neU" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="URq-Vz-Nz0"/>
+                            <constraint firstItem="a8s-5o-78p" firstAttribute="trailing" secondItem="laq-XM-Qew" secondAttribute="trailing" constant="20" id="Uts-Lt-esJ"/>
+                            <constraint firstItem="Wyr-9z-BVM" firstAttribute="top" secondItem="0P4-qY-uLW" secondAttribute="bottom" constant="8" id="WTn-TU-oJr"/>
+                            <constraint firstItem="laq-XM-Qew" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="Yvx-vE-Pb7"/>
+                            <constraint firstItem="cUy-bj-Tkb" firstAttribute="top" secondItem="Wyr-9z-BVM" secondAttribute="bottom" constant="24" id="byo-3t-jBS"/>
+                            <constraint firstItem="a8s-5o-78p" firstAttribute="trailing" secondItem="9I8-7V-Ig4" secondAttribute="trailing" constant="20" id="ilv-7Z-aFy"/>
+                            <constraint firstItem="Teq-IS-IXD" firstAttribute="leading" secondItem="a8s-5o-78p" secondAttribute="leading" constant="20" id="jUK-7d-lp3"/>
+                            <constraint firstItem="laq-XM-Qew" firstAttribute="top" secondItem="Teq-IS-IXD" secondAttribute="bottom" constant="8" id="knH-Re-rd2"/>
+                            <constraint firstItem="Teq-IS-IXD" firstAttribute="top" secondItem="9I8-7V-Ig4" secondAttribute="bottom" constant="24" id="vok-U2-VGz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a8s-5o-78p"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Criar Exercício" id="JmO-cd-Fce">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uWb-GB-WE6"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="npx-a9-ErZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="exerciceName" destination="Wyr-9z-BVM" id="Hrw-7P-oOs"/>
+                        <outlet property="exerciceRepetitions" destination="laq-XM-Qew" id="Qb3-3h-zWS"/>
+                        <outlet property="exerciceSeries" destination="9I8-7V-Ig4" id="1RV-Ri-Lxw"/>
+                        <outlet property="exerciceWeight" destination="bq4-mc-ZEx" id="oZU-Ra-mLm"/>
+                        <outlet property="saveExercice" destination="npx-a9-ErZ" id="hJ1-if-1FT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jDl-N2-PbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2941.5999999999999" y="357.57121439280365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SUo-fn-JOh">

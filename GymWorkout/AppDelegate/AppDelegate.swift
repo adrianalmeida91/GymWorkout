@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Injection
         // ViewModels
         container.autoregister(WorkoutViewModel.self, initializer: WorkoutViewModel.init)
-        container.autoregister(WorkoutCreateViewModel.self, initializer: WorkoutCreateViewModel.init)
+        container.autoregister(WorkoutBuildViewModel.self, initializer: WorkoutBuildViewModel.init)
+        container.autoregister(ExercicesViewModel.self, initializer: ExercicesViewModel.init)
+        container.autoregister(ExerciceCreateViewModel.self, initializer: ExerciceCreateViewModel.init)
 
         // ViewControllers
         container.register(WorkoutViewController.self) { _ in
@@ -27,9 +29,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             controller.viewModel = container ~> WorkoutViewModel.self
             return controller
         }
-        container.register(WorkoutCreateViewController.self) { _ in
-            let controller = R.storyboard.storyboard().instantiateViewController(withIdentifier: "WorkoutCreateViewController") as! WorkoutCreateViewController
-            controller.viewModel = container ~> WorkoutCreateViewModel.self
+        container.register(WorkoutBuildViewController.self) { _ in
+            let controller = R.storyboard.storyboard().instantiateViewController(withIdentifier: "WorkoutBuildViewController") as! WorkoutBuildViewController
+            controller.viewModel = container ~> WorkoutBuildViewModel.self
+            return controller
+        }
+        container.register(ExercicesViewController.self) { _ in
+            let controller = R.storyboard.storyboard().instantiateViewController(withIdentifier: "ExercicesViewController") as! ExercicesViewController
+            controller.viewModel = container ~> ExercicesViewModel.self
+            return controller
+        }
+        container.register(ExerciceCreateViewController.self) { _ in
+            let controller = R.storyboard.storyboard().instantiateViewController(withIdentifier: "ExerciceCreateViewController") as! ExerciceCreateViewController
+            controller.viewModel = container ~> ExerciceCreateViewModel.self
             return controller
         }
 

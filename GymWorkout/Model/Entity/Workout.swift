@@ -19,6 +19,7 @@ import RealmSwift
         get { return RadioButtonEnum(rawValue: privateRadioButtonType)! }
         set { privateRadioButtonType = newValue.rawValue }
     }
+    var exercices = List<Exercice>()
 
     override static func primaryKey() -> String? {
         return "id"

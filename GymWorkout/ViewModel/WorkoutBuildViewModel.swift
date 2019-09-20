@@ -1,5 +1,5 @@
 //
-//  WorkoutCreateViewModel.swift
+//  WorkoutBuildViewModel.swift
 //  GymWorkout
 //
 //  Created by Adrian de Almeida on 08/09/19.
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class WorkoutCreateViewModel {
+class WorkoutBuildViewModel {
 
     private let disposeBag = DisposeBag()
     private var databaseService: DatabaseService
