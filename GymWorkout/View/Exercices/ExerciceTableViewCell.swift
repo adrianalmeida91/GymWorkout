@@ -15,7 +15,7 @@ class ExerciceTableViewCell: UITableViewCell {
     @IBOutlet weak var repetitionValue: UILabel!
     @IBOutlet weak var weightValue: UILabel!
 
-    func setLabels(exercice: Exercice) {
+    func setupExerciceCell(exercice: Exercice) {
         self.exerciceName.text = exercice.name
         self.seriesValue.text = "x\(exercice.series)"
         self.repetitionValue.text = exercice.repetitions

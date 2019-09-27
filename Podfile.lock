@@ -1,5 +1,4 @@
 PODS:
-  - BEMCheckBox (1.4.1)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
@@ -22,7 +21,6 @@ PODS:
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
-  - BEMCheckBox
   - R.swift (~> 5.0)
   - RealmSwift (~> 3.13)
   - RxCocoa (~> 5)
@@ -33,7 +31,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - BEMCheckBox
     - R.swift
     - R.swift.Library
     - Realm
@@ -46,7 +43,6 @@ SPEC REPOS:
     - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
-  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
@@ -58,6 +54,6 @@ SPEC CHECKSUMS:
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectAutoregistration: 0502a16e5f5baf181be80dc9510e0efa29130485
 
-PODFILE CHECKSUM: 56941a56cf0b95a010c411433c6945f381f50f43
+PODFILE CHECKSUM: 734ea6bbfe510dbce13a0a2dbbafe2952e1d21a4
 
 COCOAPODS: 1.7.5

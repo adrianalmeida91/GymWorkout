@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.autoregister(ExerciceCreateViewModel.self, initializer: ExerciceCreateViewModel.init)
 
         // ViewControllers
+        container.register(SplashViewController.self) { _ in
+            let controller = R.storyboard.storyboard().instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+            return controller
+        }
         container.register(WorkoutViewController.self) { _ in
             let controller = R.storyboard.storyboard().instantiateViewController(withIdentifier: "WorkoutViewController") as! WorkoutViewController
             controller.viewModel = container ~> WorkoutViewModel.self
@@ -51,7 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Thread.sleep(forTimeInterval: 3.0)
         // Override point for customization after application launch.
         setupWindowInjection()
         return true
@@ -80,8 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setupWindowInjection() {
-        let workoutViewController = container ~> WorkoutViewController.self
-        let navigationController = UINavigationController(rootViewController: workoutViewController)
+        let splashViewController = container ~> SplashViewController.self
+        let navigationController = UINavigationController(rootViewController: splashViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

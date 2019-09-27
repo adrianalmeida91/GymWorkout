@@ -11,6 +11,7 @@ import UIKit
 @objc protocol CustomAlertProtocol {
     func alertFirstButtonTapped(alert: CustomAlert)
     func alertSecondButtonTapped(alert: CustomAlert)
+    func alertTextFieldSecondButtonTapped(alert: CustomAlert, value: String)
     func alertDismissed(alert: CustomAlert)
 }
 
@@ -20,8 +21,10 @@ class CustomAlert: UIView, Modal {
     private var dialogViewWidth = CGFloat()
     private var titleLabel = UILabel()
     private var messageLabel = UITextView()
+    internal var textfield = UITextField()
     private var firstButton: UIButton?
     private var secondButton: UIButton?
+    var isTextField = false
     var dismissOnTouchOutside = true
     var buttonsDelegate: CustomAlertProtocol?
 
@@ -48,16 +51,19 @@ class CustomAlert: UIView, Modal {
 
     func initialize(title: NSAttributedString,
                     message: NSAttributedString?,
+                    isTextField: Bool = false,
                     type: ModalButtonType,
                     firstButtonText: NSAttributedString? = nil,
                     secondButtonText: NSAttributedString? = nil,
                     viewWidth: CGFloat? = nil) {
+        self.isTextField = isTextField
         dialogView.clipsToBounds = true
         dialogViewWidth = viewWidth ?? frame.width - CGFloat(Constants.Modal.dialogViewWidthDefaultMargin)
-        dialogView.backgroundColor = UIColor.white
+        dialogView.backgroundColor = UIColor.init(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
         setupBackground()
         addTitle(title: title)
         addMessage(message: message)
+        addTextField()
         addButtons(type: type, firstTitle: firstButtonText, secondTitle: secondButtonText)
         let dialogViewHeight = calculateDialogHeight()
         dialogView.frame.origin = CGPoint(x: CGFloat(Constants.Modal.margin), y: frame.height)
@@ -107,9 +113,25 @@ class CustomAlert: UIView, Modal {
         dialogView.addSubview(messageLabel)
     }
 
+    private func addTextField() {
+        if !isTextField { return }
+        textfield = UITextField(frame: CGRect(x: dialogViewWidth / 2 - CGFloat(Constants.Modal.textFieldWidth) / 2,
+                                              y: messageLabel.text.isEmpty ? titleLabel.frame.maxY : messageLabel.frame.maxY + CGFloat(Constants.Modal.spaceBetweenLabels),
+                                              width: CGFloat(Constants.Modal.textFieldWidth),
+                                              height: CGFloat(Constants.Modal.labelsHeight)))
+        textfield.backgroundColor = UIColor.white
+        textfield.borderStyle = UITextField.BorderStyle.roundedRect
+        textfield.textAlignment = .center
+        textfield.tintColor = UIColor.black
+        textfield.autocorrectionType = UITextAutocorrectionType.no
+        textfield.keyboardType = UIKeyboardType.default
+        textfield.returnKeyType = UIReturnKeyType.done
+        dialogView.addSubview(textfield)
+    }
+
     private func addButtons(type: ModalButtonType, firstTitle: NSAttributedString?, secondTitle: NSAttributedString?) {
         let topPadding = CGFloat(Constants.Modal.titleTopMargin)
-        let separatorLineView = addSeparator(view: messageLabel, padding: topPadding)
+        let separatorLineView = addSeparator(view: isTextField ? textfield : messageLabel, padding: topPadding)
         switch type {
         case .single:
             firstButton = addButton(below: separatorLineView, withTitle: firstTitle ?? NSAttributedString(string: ""))
@@ -197,12 +219,16 @@ class CustomAlert: UIView, Modal {
         }
     }
 
-    @objc private func buttonTapped(sender: UIButton) {
+    @objc internal func buttonTapped(sender: UIButton) {
         dismiss(animated: true)
         if sender == firstButton {
             buttonsDelegate?.alertFirstButtonTapped(alert: self)
         } else if sender == secondButton {
-            buttonsDelegate?.alertSecondButtonTapped(alert: self)
+            if (isTextField) {
+                buttonsDelegate?.alertTextFieldSecondButtonTapped(alert: self, value: textfield.text ?? "")
+            } else {
+                buttonsDelegate?.alertSecondButtonTapped(alert: self)
+            }
         }
     }
 }

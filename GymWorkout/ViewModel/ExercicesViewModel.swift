@@ -21,4 +21,8 @@ class ExercicesViewModel {
     func removeExercice(workout: Workout, exerciceIndex: Int) -> Completable {
         return databaseService.removeExercice(workout: workout, exerciceIndex: exerciceIndex)
     }
+
+    func updateExerciceWeight(workout: Workout, exerciceIndex: Int, value: String) -> Completable {
+        return databaseService.updateExerciceWeight(workout: workout, exerciceIndex: exerciceIndex, value: value)
+    }
 }

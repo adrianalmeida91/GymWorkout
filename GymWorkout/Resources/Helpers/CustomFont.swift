@@ -28,4 +28,9 @@ struct CustomFont {
         static let deleteBoldAlertButton: [NSAttributedString.Key: Any] = [.font: CustomFont.systemBold17, .foregroundColor: SystemColor.red.uiColor]
         static let regularAlertButton: [NSAttributedString.Key: Any] = [.font: CustomFont.systemRegular17, .foregroundColor: SystemColor.blue.uiColor]
     }
+
+    struct AskNewWieghtAlerts {
+        static let confirmBoldAlertButton: [NSAttributedString.Key: Any] = [.font: CustomFont.systemBold17, .foregroundColor: SystemColor.blue.uiColor]
+        static let regularAlertButton: [NSAttributedString.Key: Any] = [.font: CustomFont.systemRegular17, .foregroundColor: SystemColor.blue.uiColor]
+    }
 }

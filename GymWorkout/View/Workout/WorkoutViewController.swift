@@ -26,6 +26,7 @@ class WorkoutViewController: BaseViewController {
     }
 
     func setupViews() {
+        navigationItem.hidesBackButton = true
         addWorkout.rx.tap.bind {
             self.showWorkoutBuild()
         }.disposed(by: disposeBag)

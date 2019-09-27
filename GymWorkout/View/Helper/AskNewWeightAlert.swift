@@ -1,16 +1,16 @@
 //
-//  DeleteConfirmAlert.swift
+//  AskNewWeightAlert.swift
 //  GymWorkout
 //
-//  Created by Adrian de Almeida on 12/09/19.
+//  Created by Adrian de Almeida on 26/09/19.
 //  Copyright © 2019 Adrian de Almeida. All rights reserved.
 //
 
 import UIKit
 
-class DeleteConfirmAlert: CustomAlert, CustomAlertProtocol {
+class AskNewWeightAlert: CustomAlert, CustomAlertProtocol {
     var navigationController: UINavigationController!
-    var onConfirm: (() -> Void)?
+    var onConfirm: ((String) -> Void)?
 
     init(title: String, message: String) {
         super.init(frame: UIScreen.main.bounds)
@@ -26,16 +26,18 @@ class DeleteConfirmAlert: CustomAlert, CustomAlertProtocol {
         paragraphStyle.alignment = NSTextAlignment.center
         initialize(title: title.toAttributedText(),
                    message: message.toAttributedText(),
+                   isTextField: true,
                    type: ModalButtonType.horizontal,
-                   firstButtonText: "Cancelar".toAttributedText(attributes: CustomFont.DeleteConfirmAlerts.regularAlertButton),
-                   secondButtonText: "Deletar".toAttributedText(attributes: CustomFont.DeleteConfirmAlerts.deleteBoldAlertButton))
+                   firstButtonText: "Cancelar".toAttributedText(attributes: CustomFont.AskNewWieghtAlerts.regularAlertButton),
+                   secondButtonText: "Confirmar".toAttributedText(attributes: CustomFont.AskNewWieghtAlerts.confirmBoldAlertButton))
         buttonsDelegate = self
         dismissOnTouchOutside = false
     }
 
-    func show(navigationController: UINavigationController, onConfirm: @escaping (() -> Void)) {
+    func show(navigationController: UINavigationController, onConfirm: @escaping ((String) -> Void)) {
         self.navigationController = navigationController
         self.onConfirm = onConfirm
+        self.textfield.becomeFirstResponder()
         sizeToFit()
         show(animated: true)
     }
@@ -45,11 +47,11 @@ class DeleteConfirmAlert: CustomAlert, CustomAlertProtocol {
     }
 
     func alertSecondButtonTapped(alert: CustomAlert) {
-        onConfirm?()
+        // do nothing
     }
 
     func alertTextFieldSecondButtonTapped(alert: CustomAlert, value: String) {
-        // do nothing
+        onConfirm?(value)
     }
 
     func alertDismissed(alert: CustomAlert) {

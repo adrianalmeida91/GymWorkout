@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01335BD761AA48D3CE6C03F6 /* Pods_GymWorkoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D745A83B90F54F3D2CBE6FC4 /* Pods_GymWorkoutUITests.framework */; };
+		01335BD761AA48D3CE6C03F6 /* Pods_GymWorkoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D745A83B90F54F3D2CBE6FC4 /* Pods_GymWorkoutUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		06DD444DAAE1E93D8F2D79F4 /* Pods_GymWorkoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B8A1C4B89034C2CE0C7F15 /* Pods_GymWorkoutTests.framework */; };
 		0A6CA95B2325890700A1626C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6CA95A2325890700A1626C /* R.generated.swift */; };
 		0A6CA96123259BDC00A1626C /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6CA96023259BDC00A1626C /* WorkoutViewModel.swift */; };
@@ -16,6 +16,13 @@
 		0A6CA9692325BC2F00A1626C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6CA9682325BC2F00A1626C /* BaseViewController.swift */; };
 		0A6CA96D2326E88200A1626C /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6CA96C2326E88200A1626C /* WorkoutTableViewCell.swift */; };
 		0A6CA9712326ED6F00A1626C /* WorkoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6CA9702326ED6F00A1626C /* WorkoutTableViewCell.xib */; };
+		0A9BE08F2337C0D500D57FB9 /* WorkoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6CA9702326ED6F00A1626C /* WorkoutTableViewCell.xib */; };
+		0A9BE0902337C0D500D57FB9 /* ExerciceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAE0CA3232FF645009858A8 /* ExerciceTableViewCell.xib */; };
+		0A9BE0912337C0D500D57FB9 /* CustomSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8EC442331741300251254 /* CustomSliderView.xib */; };
+		0A9BE0922337C0D500D57FB9 /* RadioButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF78E43231D59A6001682A8 /* RadioButtonView.xib */; };
+		0A9BE0932337C0D500D57FB9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF78E4C231D5A0D001682A8 /* Storyboard.storyboard */; };
+		0A9BE0942337C0D500D57FB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AF78E51231D5A39001682A8 /* Assets.xcassets */; };
+		0A9BE0952337C0E600D57FB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF78E4D231D5A0D001682A8 /* LaunchScreen.storyboard */; };
 		0AAE0C8B232ABB32009858A8 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE0C8A232ABB32009858A8 /* CustomAlert.swift */; };
 		0AAE0C8E232AC4B1009858A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE0C8D232AC4B1009858A8 /* Constants.swift */; };
 		0AAE0C90232AD25F009858A8 /* SeparatorLineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE0C8F232AD25F009858A8 /* SeparatorLineType.swift */; };
@@ -35,6 +42,8 @@
 		0AC8EC4A233406A200251254 /* ExercicesViewControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8EC48233406A200251254 /* ExercicesViewControll.swift */; };
 		0AC8EC4B233406A200251254 /* ExerciceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8EC49233406A200251254 /* ExerciceTableViewCell.swift */; };
 		0AC8EC4D2334088300251254 /* ExerciceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8EC4C2334088300251254 /* ExerciceType.swift */; };
+		0AF5C58F233D3AB20097C071 /* AskNewWeightAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5C58E233D3AB20097C071 /* AskNewWeightAlert.swift */; };
+		0AF5C594233E86FF0097C071 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5C593233E86FF0097C071 /* SplashViewController.swift */; };
 		0AF78E06231D5842001682A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E05231D5842001682A8 /* AppDelegate.swift */; };
 		0AF78E1B231D5844001682A8 /* GymWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E1A231D5844001682A8 /* GymWorkoutTests.swift */; };
 		0AF78E26231D5844001682A8 /* GymWorkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E25231D5844001682A8 /* GymWorkoutUITests.swift */; };
@@ -51,7 +60,7 @@
 		0AF78E56231D837C001682A8 /* RadioButtonMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E55231D837C001682A8 /* RadioButtonMode.swift */; };
 		0AF78E5A231D89E3001682A8 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E59231D89E3001682A8 /* Workout.swift */; };
 		0AF78E5D231D9E94001682A8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E5C231D9E94001682A8 /* CustomTextField.swift */; };
-		0E5C722E402DD940FF1DB04D /* Pods_GymWorkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DA1C95A635E359BB770D8 /* Pods_GymWorkout.framework */; };
+		0E5C722E402DD940FF1DB04D /* Pods_GymWorkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DA1C95A635E359BB770D8 /* Pods_GymWorkout.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +109,8 @@
 		0AC8EC48233406A200251254 /* ExercicesViewControll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercicesViewControll.swift; sourceTree = "<group>"; };
 		0AC8EC49233406A200251254 /* ExerciceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceTableViewCell.swift; sourceTree = "<group>"; };
 		0AC8EC4C2334088300251254 /* ExerciceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceType.swift; sourceTree = "<group>"; };
+		0AF5C58E233D3AB20097C071 /* AskNewWeightAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskNewWeightAlert.swift; sourceTree = "<group>"; };
+		0AF5C593233E86FF0097C071 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		0AF78E02231D5842001682A8 /* GymWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF78E05231D5842001682A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AF78E11231D5844001682A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,6 +242,14 @@
 			path = Slider;
 			sourceTree = "<group>";
 		};
+		0AF5C592233E86C70097C071 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0AF5C593233E86FF0097C071 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		0AF78DF9231D5842001682A8 = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +318,7 @@
 		0AF78E36231D58F1001682A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0AF5C592233E86C70097C071 /* Splash */,
 				0AF78E38231D5919001682A8 /* Workout */,
 				0AF78E39231D5925001682A8 /* WorkoutBuild */,
 				0AAE0C9A232EABB5009858A8 /* Exercices */,
@@ -313,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				0AAE0C91232AD8BB009858A8 /* DeleteConfirmAlert.swift */,
+				0AF5C58E233D3AB20097C071 /* AskNewWeightAlert.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -576,6 +597,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9BE0952337C0E600D57FB9 /* LaunchScreen.storyboard in Resources */,
+				0A9BE08F2337C0D500D57FB9 /* WorkoutTableViewCell.xib in Resources */,
+				0A9BE0902337C0D500D57FB9 /* ExerciceTableViewCell.xib in Resources */,
+				0A9BE0912337C0D500D57FB9 /* CustomSliderView.xib in Resources */,
+				0A9BE0922337C0D500D57FB9 /* RadioButtonView.xib in Resources */,
+				0A9BE0932337C0D500D57FB9 /* Storyboard.storyboard in Resources */,
+				0A9BE0942337C0D500D57FB9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +730,7 @@
 				0AF78E54231D5A39001682A8 /* SystemColor.swift in Sources */,
 				0AC8EC4D2334088300251254 /* ExerciceType.swift in Sources */,
 				0AAE0CA0232ECEE2009858A8 /* UISegmentedControl.swift in Sources */,
+				0AF5C58F233D3AB20097C071 /* AskNewWeightAlert.swift in Sources */,
 				0AAE0C9E232EBA52009858A8 /* ExercicesViewModel.swift in Sources */,
 				0AF78E3D231D5947001682A8 /* WorkoutViewController.swift in Sources */,
 				0AC8EC432331739D00251254 /* CustomSliderView.swift in Sources */,
@@ -709,6 +738,7 @@
 				0AF78E5D231D9E94001682A8 /* CustomTextField.swift in Sources */,
 				0AF78E3B231D593A001682A8 /* WorkoutBuildViewController.swift in Sources */,
 				0AAE0C97232ADEC3009858A8 /* CustomFont.swift in Sources */,
+				0AF5C594233E86FF0097C071 /* SplashViewController.swift in Sources */,
 				0AAE0C95232ADBAB009858A8 /* String.swift in Sources */,
 				0AC8EC402331642300251254 /* ExerciceCreateViewModel.swift in Sources */,
 				0AC8EC3B2331626D00251254 /* WorkoutBuildViewModel.swift in Sources */,

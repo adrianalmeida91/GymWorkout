@@ -12,11 +12,14 @@ import RxCocoa
 
 class WorkoutBuildViewController: BaseViewController {
 
-    @IBOutlet weak var nameTextField: CustomTextField!
-    @IBOutlet weak var startTextField: CustomTextField!
-    @IBOutlet weak var endTextField: CustomTextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var startTextField: UITextField!
+    @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var saveWorkout: UIBarButtonItem!
     @IBOutlet weak var radioButtonGroup: RadioButtonView!
+    @IBOutlet weak var nameErrorLabel: UILabel!
+    @IBOutlet weak var startErrorLabel: UILabel!
+    @IBOutlet weak var endErrorLabel: UILabel!
 
     private var disposeBag = DisposeBag()
     private var activeTextField: UITextField? = nil
@@ -40,13 +43,13 @@ class WorkoutBuildViewController: BaseViewController {
         }).disposed(by: disposeBag)
         saveWorkout.rx.tap.bind {
             if self.nameTextField.text?.isEmpty ?? false {
-                self.nameTextField.setErrorMessage("Esse campo não pode ser vazio!")
+                self.nameErrorLabel.isHidden = false
             }
             if self.startTextField.text?.isEmpty ?? false {
-                self.startTextField.setErrorMessage("Esse campo não pode ser vazio!")
+                self.startErrorLabel.isHidden = false
             }
             if self.endTextField.text?.isEmpty ?? false {
-                self.endTextField.setErrorMessage("Esse campo não pode ser vazio!")
+                self.endErrorLabel.isHidden = false
             }
             if self.isFieldValid {
                 self.createWorkout()
@@ -54,7 +57,7 @@ class WorkoutBuildViewController: BaseViewController {
         }.disposed(by: disposeBag)
     }
 
-    func setupPicker(textField: CustomTextField) {
+    func setupPicker(textField: UITextField) {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
@@ -128,26 +131,11 @@ extension WorkoutBuildViewController: UITextFieldDelegate {
 
     func clearTextFields(_ textField: UITextField) {
         if textField === nameTextField {
-            clearNameTextField()
+            nameErrorLabel.isHidden = true
         } else if textField === startTextField {
-            clearStartTextField()
+            startErrorLabel.isHidden = true
         } else if textField === endTextField {
-            clearEndTextField()
+            endErrorLabel.isHidden = true
         }
-    }
-
-    func clearNameTextField() {
-        nameTextField.hasError = false
-        nameTextField.removeError()
-    }
-
-    func clearStartTextField() {
-        startTextField.hasError = false
-        startTextField.removeError()
-    }
-
-    func clearEndTextField() {
-        endTextField.hasError = false
-        endTextField.removeError()
     }
 }

@@ -53,6 +53,7 @@ class RadioButtonView: UIView {
             }
         }).disposed(by: disposeBag)
     }
+
     @IBAction func radioButtonPressed(_ sender: UIButton) {
         switch sender {
         case radioButtonAB:

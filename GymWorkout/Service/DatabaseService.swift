@@ -94,4 +94,21 @@ class DatabaseService {
             return Disposables.create()
         }
     }
+
+    func updateExerciceWeight(workout: Workout, exerciceIndex: Int, value: String) -> Completable {
+        return Completable.create { completable in
+            DispatchQueue.main.async {
+                do {
+                    let realm = RealmManager.createRealmInstance()
+                    try realm.write {
+                        workout.exercices[exerciceIndex].weight = value
+                    }
+                    completable(.completed)
+                } catch {
+                    completable(.error(error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
 }

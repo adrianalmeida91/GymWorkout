@@ -13,10 +13,13 @@ import RxCocoa
 class ExerciceCreateViewController: BaseViewController {
 
     @IBOutlet weak var saveExercice: UIBarButtonItem!
-    @IBOutlet weak var exerciceName: CustomTextField!
-    @IBOutlet weak var exerciceSeries: CustomTextField!
-    @IBOutlet weak var exerciceRepetitions: CustomTextField!
+    @IBOutlet weak var exerciceName: UITextField!
+    @IBOutlet weak var exerciceSeries: UITextField!
+    @IBOutlet weak var exerciceRepetitions: UITextField!
     @IBOutlet weak var exerciceWeight: CustomSliderView!
+    @IBOutlet weak var nameErrorLabel: UILabel!
+    @IBOutlet weak var seriesErrorLabel: UILabel!
+    @IBOutlet weak var repetitionsErrorLabel: UILabel!
 
     private var disposeBag = DisposeBag()
     var viewModel: ExerciceCreateViewModel!
@@ -30,6 +33,9 @@ class ExerciceCreateViewController: BaseViewController {
     }
 
     func setupViews() {
+        exerciceName.delegate = self
+        exerciceSeries.delegate = self
+        exerciceRepetitions.delegate = self
         exerciceName.rx.text.orEmpty.bind(to: viewModel.exerciceName).disposed(by: disposeBag)
         exerciceSeries.rx.text.orEmpty.bind(to: viewModel.exerciceSeries).disposed(by: disposeBag)
         exerciceRepetitions.rx.text.orEmpty.bind(to: viewModel.exerciceRepetitions).disposed(by: disposeBag)
@@ -41,13 +47,13 @@ class ExerciceCreateViewController: BaseViewController {
         }).disposed(by: disposeBag)
         saveExercice.rx.tap.bind {
             if self.exerciceName.text?.isEmpty ?? false {
-                self.exerciceName.setErrorMessage("Esse campo não pode ser vazio!")
+                self.nameErrorLabel.isHidden = false
             }
             if self.exerciceSeries.text?.isEmpty ?? false {
-                self.exerciceSeries.setErrorMessage("Esse campo não pode ser vazio!")
+                self.seriesErrorLabel.isHidden = false
             }
             if self.exerciceRepetitions.text?.isEmpty ?? false {
-                self.exerciceRepetitions.setErrorMessage("Esse campo não pode ser vazio!")
+                self.repetitionsErrorLabel.isHidden = false
             }
             if self.isFieldValid {
                 self.createExercice()
@@ -72,6 +78,22 @@ class ExerciceCreateViewController: BaseViewController {
                     print("\(error)")
                 }
             }).disposed(by: self.disposeBag)
+        }
+    }
+}
+
+extension ExerciceCreateViewController: UITextFieldDelegate {
+    internal func textFieldDidBeginEditing(_ textField: UITextField) {
+        clearTextFields(textField)
+    }
+
+    func clearTextFields(_ textField: UITextField) {
+        if textField === exerciceName {
+            nameErrorLabel.isHidden = true
+        } else if textField === exerciceSeries {
+            seriesErrorLabel.isHidden = true
+        } else if textField === exerciceRepetitions {
+            repetitionsErrorLabel.isHidden = true
         }
     }
 }

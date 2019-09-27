@@ -119,7 +119,7 @@ extension ExercicesViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.exerciceTableViewCell, for: indexPath)!
-        cell.setLabels(exercice: self.exercices[indexPath.row])
+        cell.setupExerciceCell(exercice: self.exercices[indexPath.row])
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
@@ -151,7 +151,19 @@ extension ExercicesViewController: UITableViewDataSource, UITableViewDelegate {
         return "Deletar"
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        showExercices(workout: workouts[indexPath.row])
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = AskNewWeightAlert(title: "Novo peso", message: "Insira novo peso para o exercício: \(self.exercices[indexPath.row].name).")
+        alert.show(navigationController: navigationController!, onConfirm: { value in
+            if let workout = self.workout {
+                self.viewModel.updateExerciceWeight(workout: workout, exerciceIndex: workout.exercices.index(of: self.exercices[indexPath.row]) ?? 0, value: value).subscribe({ result in
+                    switch result {
+                    case .completed:
+                        self.reloadData()
+                    case .error(let error):
+                        print("\(error)")
+                    }
+                }).disposed(by: self.disposeBag)
+            }
+        })
+    }
 }

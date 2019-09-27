@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,12 +12,12 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciceTableViewCell" rowHeight="85" id="P9v-NO-eIg" customClass="ExerciceTableViewCell" customModule="GymWorkout" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9v-NO-eIg" id="bgw-KZ-FIK">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9v-NO-eIg" id="bgw-KZ-FIK">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkd-bQ-V5N">
-                        <rect key="frame" x="0.0" y="37" width="375" height="47.5"/>
+                        <rect key="frame" x="0.0" y="37" width="375" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8l-pR-2hp">
                                 <rect key="frame" x="10" y="25" width="19" height="21"/>
@@ -51,10 +49,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoX-re-IgJ" customClass="BEMCheckBox">
-                                <rect key="frame" x="320" y="11" width="26" height="24"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Séries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJ1-UP-PEC">
                                 <rect key="frame" x="10" y="0.0" width="53" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -66,18 +60,14 @@
                             <constraint firstItem="myD-y7-1Dv" firstAttribute="top" secondItem="Sbd-OJ-jod" secondAttribute="bottom" constant="2" id="21d-TT-VVZ"/>
                             <constraint firstItem="n8l-pR-2hp" firstAttribute="leading" secondItem="HJ1-UP-PEC" secondAttribute="leading" id="2fc-gg-WT3"/>
                             <constraint firstItem="myD-y7-1Dv" firstAttribute="leading" secondItem="Sbd-OJ-jod" secondAttribute="leading" id="8uu-f5-gPh"/>
-                            <constraint firstItem="uoX-re-IgJ" firstAttribute="top" secondItem="nkd-bQ-V5N" secondAttribute="top" constant="11" id="D0K-GZ-ynt"/>
                             <constraint firstItem="Sbd-OJ-jod" firstAttribute="top" secondItem="nkd-bQ-V5N" secondAttribute="top" id="FKu-Vd-02D"/>
-                            <constraint firstAttribute="bottom" secondItem="uoX-re-IgJ" secondAttribute="bottom" constant="12.5" id="J5Q-5F-Z8j"/>
                             <constraint firstItem="HJ1-UP-PEC" firstAttribute="top" secondItem="nkd-bQ-V5N" secondAttribute="top" id="R9I-9x-zvQ"/>
-                            <constraint firstAttribute="trailing" secondItem="uoX-re-IgJ" secondAttribute="trailing" constant="29" id="UU6-xO-zl7"/>
                             <constraint firstItem="FGD-cL-pbY" firstAttribute="top" secondItem="MS2-jy-oWg" secondAttribute="bottom" constant="2" id="UcI-FI-txa"/>
                             <constraint firstItem="MS2-jy-oWg" firstAttribute="leading" secondItem="HJ1-UP-PEC" secondAttribute="trailing" constant="40" id="Vhu-qd-p3X"/>
                             <constraint firstItem="Sbd-OJ-jod" firstAttribute="leading" secondItem="MS2-jy-oWg" secondAttribute="trailing" constant="40" id="b8c-Jx-cwK"/>
                             <constraint firstItem="HJ1-UP-PEC" firstAttribute="leading" secondItem="nkd-bQ-V5N" secondAttribute="leading" constant="10" id="eUA-Vf-3Iz"/>
                             <constraint firstItem="MS2-jy-oWg" firstAttribute="top" secondItem="nkd-bQ-V5N" secondAttribute="top" id="jFz-ou-xhF"/>
                             <constraint firstItem="n8l-pR-2hp" firstAttribute="top" secondItem="HJ1-UP-PEC" secondAttribute="bottom" constant="2" id="kM0-Uf-PSp"/>
-                            <constraint firstItem="uoX-re-IgJ" firstAttribute="leading" secondItem="Sbd-OJ-jod" secondAttribute="trailing" constant="40" id="qWf-lT-Y4o"/>
                             <constraint firstItem="FGD-cL-pbY" firstAttribute="leading" secondItem="MS2-jy-oWg" secondAttribute="leading" id="tyn-ZD-H2S"/>
                         </constraints>
                     </view>
@@ -93,6 +83,7 @@
                     <constraint firstItem="ufq-YO-DKM" firstAttribute="top" secondItem="bgw-KZ-FIK" secondAttribute="top" constant="5" id="DUt-EM-9pw"/>
                     <constraint firstItem="ufq-YO-DKM" firstAttribute="leading" secondItem="bgw-KZ-FIK" secondAttribute="leading" constant="10" id="RCJ-mm-BOv"/>
                     <constraint firstItem="nkd-bQ-V5N" firstAttribute="top" secondItem="ufq-YO-DKM" secondAttribute="bottom" constant="5" id="Zw0-En-gmf"/>
+                    <constraint firstItem="nkd-bQ-V5N" firstAttribute="centerX" secondItem="bgw-KZ-FIK" secondAttribute="centerX" id="cRc-B8-Is4"/>
                     <constraint firstAttribute="bottom" secondItem="nkd-bQ-V5N" secondAttribute="bottom" id="msO-Lr-g1I"/>
                     <constraint firstItem="nkd-bQ-V5N" firstAttribute="leading" secondItem="bgw-KZ-FIK" secondAttribute="leading" id="oUn-Nw-0JC"/>
                 </constraints>

@@ -19,6 +19,7 @@ struct Constants {
         static let leftPadding = 16
         static let margin = 32
         static let labelsHeight = 30
+        static let textFieldWidth = 60
         static let spaceBetweenLabels = 2
         static let separatorWidth = 0.5
         static let separatorHeight = 0.5
