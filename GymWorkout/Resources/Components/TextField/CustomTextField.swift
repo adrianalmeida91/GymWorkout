@@ -19,6 +19,7 @@ extension CustomTextFieldProtocol where Self: UITextField {
     mutating func setErrorMessage(_ text: String) {
         if errorView == nil {
             errorView = UILabel(frame: CGRect(x: 0, y: self.frame.height + 4, width: 20, height: 14))
+            errorView?.isAccessibilityElement = true
             errorView?.textColor = UIColor.red
             self.addSubview(errorView!)
         }

@@ -33,7 +33,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Treinos" id="BJd-yt-BNj">
                         <barButtonItem key="backBarButtonItem" title=" " id="0bi-cO-Bje"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="81P-ov-oQ0"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="81P-ov-oQ0">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="addTreino"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addWorkout" destination="81P-ov-oQ0" id="uEV-fM-aIH"/>
@@ -80,7 +84,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Exercicios" id="Yt6-qU-W18">
                         <barButtonItem key="backBarButtonItem" title=" " id="UHC-2l-bbr"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nDd-43-Nmb"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nDd-43-Nmb">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="addExercicio"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addExercice" destination="nDd-43-Nmb" id="Sc5-TT-ist"/>
@@ -103,11 +111,12 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome do treino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ruY-IM-Zeh">
                                 <rect key="frame" x="20" y="89" width="335" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="nome"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Início" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg2-Zz-m2d">
-                                <rect key="frame" x="20" y="163" width="107" height="21"/>
+                                <rect key="frame" x="20" y="147" width="107" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="gy3-KV-9kk"/>
                                     <constraint firstAttribute="height" constant="21" id="mxq-ez-glY"/>
@@ -116,9 +125,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha a data de início do treino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-hU-Q6v" customClass="CustomTextField" customModule="GymWorkout" customModuleProvider="target">
-                                <rect key="frame" x="20" y="192" width="335" height="30"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha a data de início do treino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-hU-Q6v">
+                                <rect key="frame" x="20" y="176" width="335" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="dataDeInicio"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -134,6 +143,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha a data final do treino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="auh-0a-98r">
                                 <rect key="frame" x="20" y="263" width="335" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="dataFinal"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -210,7 +220,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Criar Treino" id="Sdj-Bt-pBD">
                         <barButtonItem key="backBarButtonItem" title=" " id="bDo-9h-rvq"/>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="PLf-ug-wCa"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="PLf-ug-wCa">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="salvar"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="endErrorLabel" destination="XGr-91-E0N" id="o0t-7H-R1I"/>
@@ -243,6 +257,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome do exercício" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-9z-BVM">
                                 <rect key="frame" x="20" y="89" width="335" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="nome"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -260,6 +275,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o número de repetições" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laq-XM-Qew">
                                 <rect key="frame" x="20" y="261" width="335" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="repeticoes"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -271,6 +287,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a quantidade de séries" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9I8-7V-Ig4">
                                 <rect key="frame" x="20" y="175" width="335" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="series"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -336,7 +353,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Criar Exercício" id="JmO-cd-Fce">
                         <barButtonItem key="backBarButtonItem" title=" " id="uWb-GB-WE6"/>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="npx-a9-ErZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="npx-a9-ErZ">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="salvar"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="exerciceName" destination="Wyr-9z-BVM" id="Hrw-7P-oOs"/>
