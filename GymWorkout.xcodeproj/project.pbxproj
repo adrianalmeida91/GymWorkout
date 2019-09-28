@@ -46,7 +46,7 @@
 		0AF5C594233E86FF0097C071 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5C593233E86FF0097C071 /* SplashViewController.swift */; };
 		0AF78E06231D5842001682A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E05231D5842001682A8 /* AppDelegate.swift */; };
 		0AF78E1B231D5844001682A8 /* GymWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E1A231D5844001682A8 /* GymWorkoutTests.swift */; };
-		0AF78E26231D5844001682A8 /* GymWorkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E25231D5844001682A8 /* GymWorkoutUITests.swift */; };
+		0AF78E26231D5844001682A8 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E25231D5844001682A8 /* BaseTest.swift */; };
 		0AF78E3B231D593A001682A8 /* WorkoutBuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E3A231D593A001682A8 /* WorkoutBuildViewController.swift */; };
 		0AF78E3D231D5947001682A8 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E3C231D5947001682A8 /* WorkoutViewController.swift */; };
 		0AF78E44231D59A6001682A8 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E42231D59A6001682A8 /* RadioButtonView.swift */; };
@@ -61,6 +61,15 @@
 		0AF78E5A231D89E3001682A8 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E59231D89E3001682A8 /* Workout.swift */; };
 		0AF78E5D231D9E94001682A8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF78E5C231D9E94001682A8 /* CustomTextField.swift */; };
 		0E5C722E402DD940FF1DB04D /* Pods_GymWorkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DA1C95A635E359BB770D8 /* Pods_GymWorkout.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F36F81FC2339304F00B55523 /* TreinosTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F81FB2339304F00B55523 /* TreinosTest.swift */; };
+		F36F81FE233944C600B55523 /* ExercicioScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F81FD233944C600B55523 /* ExercicioScreen.swift */; };
+		F36F8200233944D500B55523 /* CriarExercicioScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F81FF233944D500B55523 /* CriarExercicioScreen.swift */; };
+		F36F8202233944E700B55523 /* ExerciciosTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F8201233944E700B55523 /* ExerciciosTest.swift */; };
+		F36F82042339450400B55523 /* CriarExercicioTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F82032339450400B55523 /* CriarExercicioTest.swift */; };
+		F3C79BAB23355BB200E821A5 /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C79BAA23355BB200E821A5 /* BaseScreen.swift */; };
+		F3C79BAD23355BC200E821A5 /* TreinosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C79BAC23355BC200E821A5 /* TreinosScreen.swift */; };
+		F3C79BAF23355DB100E821A5 /* CriarTreinoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C79BAE23355DB100E821A5 /* CriarTreinoTest.swift */; };
+		F3C79BB92337F13800E821A5 /* CriarTreinoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C79BB82337F13800E821A5 /* CriarTreinoScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +127,7 @@
 		0AF78E1A231D5844001682A8 /* GymWorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymWorkoutTests.swift; sourceTree = "<group>"; };
 		0AF78E1C231D5844001682A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF78E21231D5844001682A8 /* GymWorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymWorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AF78E25231D5844001682A8 /* GymWorkoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymWorkoutUITests.swift; sourceTree = "<group>"; };
+		0AF78E25231D5844001682A8 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		0AF78E27231D5844001682A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF78E3A231D593A001682A8 /* WorkoutBuildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutBuildViewController.swift; sourceTree = "<group>"; };
 		0AF78E3C231D5947001682A8 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +146,15 @@
 		97B8A1C4B89034C2CE0C7F15 /* Pods_GymWorkoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymWorkoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D745A83B90F54F3D2CBE6FC4 /* Pods_GymWorkoutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymWorkoutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBF366BC01B6F7130104452 /* Pods-GymWorkoutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymWorkoutUITests.debug.xcconfig"; path = "Target Support Files/Pods-GymWorkoutUITests/Pods-GymWorkoutUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F36F81FB2339304F00B55523 /* TreinosTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinosTest.swift; sourceTree = "<group>"; };
+		F36F81FD233944C600B55523 /* ExercicioScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercicioScreen.swift; sourceTree = "<group>"; };
+		F36F81FF233944D500B55523 /* CriarExercicioScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarExercicioScreen.swift; sourceTree = "<group>"; };
+		F36F8201233944E700B55523 /* ExerciciosTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciciosTest.swift; sourceTree = "<group>"; };
+		F36F82032339450400B55523 /* CriarExercicioTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarExercicioTest.swift; sourceTree = "<group>"; };
+		F3C79BAA23355BB200E821A5 /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
+		F3C79BAC23355BC200E821A5 /* TreinosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinosScreen.swift; sourceTree = "<group>"; };
+		F3C79BAE23355DB100E821A5 /* CriarTreinoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarTreinoTest.swift; sourceTree = "<group>"; };
+		F3C79BB82337F13800E821A5 /* CriarTreinoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarTreinoScreen.swift; sourceTree = "<group>"; };
 		F6D0D33DCCB999E408B3400C /* Pods-GymWorkoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymWorkoutTests.release.xcconfig"; path = "Target Support Files/Pods-GymWorkoutTests/Pods-GymWorkoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC396CEE9D18D02E63298EA3 /* Pods-GymWorkoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymWorkoutTests.debug.xcconfig"; path = "Target Support Files/Pods-GymWorkoutTests/Pods-GymWorkoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE4DA1C95A635E359BB770D8 /* Pods_GymWorkout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymWorkout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,7 +319,8 @@
 		0AF78E24231D5844001682A8 /* GymWorkoutUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0AF78E25231D5844001682A8 /* GymWorkoutUITests.swift */,
+				F3C79BA923354FB600E821A5 /* Screens */,
+				F3C79BA823354FAE00E821A5 /* Tests */,
 				0AF78E27231D5844001682A8 /* Info.plist */,
 			);
 			path = GymWorkoutUITests;
@@ -452,6 +471,30 @@
 				0AF78E5C231D9E94001682A8 /* CustomTextField.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		F3C79BA823354FAE00E821A5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0AF78E25231D5844001682A8 /* BaseTest.swift */,
+				F3C79BAE23355DB100E821A5 /* CriarTreinoTest.swift */,
+				F36F81FB2339304F00B55523 /* TreinosTest.swift */,
+				F36F82032339450400B55523 /* CriarExercicioTest.swift */,
+				F36F8201233944E700B55523 /* ExerciciosTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		F3C79BA923354FB600E821A5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F3C79BAA23355BB200E821A5 /* BaseScreen.swift */,
+				F3C79BAC23355BC200E821A5 /* TreinosScreen.swift */,
+				F3C79BB82337F13800E821A5 /* CriarTreinoScreen.swift */,
+				F36F81FD233944C600B55523 /* ExercicioScreen.swift */,
+				F36F81FF233944D500B55523 /* CriarExercicioScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		F7780E357725800A6B0C247D /* Pods */ = {
@@ -623,7 +666,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -769,7 +812,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF78E26231D5844001682A8 /* GymWorkoutUITests.swift in Sources */,
+				F3C79BB92337F13800E821A5 /* CriarTreinoScreen.swift in Sources */,
+				F3C79BAF23355DB100E821A5 /* CriarTreinoTest.swift in Sources */,
+				F36F81FC2339304F00B55523 /* TreinosTest.swift in Sources */,
+				F3C79BAD23355BC200E821A5 /* TreinosScreen.swift in Sources */,
+				F3C79BAB23355BB200E821A5 /* BaseScreen.swift in Sources */,
+				F36F82042339450400B55523 /* CriarExercicioTest.swift in Sources */,
+				0AF78E26231D5844001682A8 /* BaseTest.swift in Sources */,
+				F36F8202233944E700B55523 /* ExerciciosTest.swift in Sources */,
+				F36F8200233944D500B55523 /* CriarExercicioScreen.swift in Sources */,
+				F36F81FE233944C600B55523 /* ExercicioScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
