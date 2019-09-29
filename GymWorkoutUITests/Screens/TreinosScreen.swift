@@ -15,6 +15,11 @@ class TreinosScreen: BaseScreen {
     public lazy var addTreinoButton = buttonsElements["addTreino"]
     public lazy var botaoDeletarTreino = buttonsElements["Deletar"]
     public lazy var botaoDeletarDialog = buttonsElements["Deletar"]
+    public lazy var treinoInicial = staticTextElements["Treino Inicial"]
+    
+    init() {
+        waitForExpectation(object: addTreinoButton, time: 8)
+    }
     
     func addTreino() -> CriarTreinoScreen {
         addTreinoButton.tap()

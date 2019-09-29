@@ -10,15 +10,33 @@ import XCTest
 
 class CriarTreinoTest: BaseTest {
     
-    lazy var treinos = TreinosScreen()
-
+    lazy var criarTreino = CriarTreinoScreen()
+    let nomeTreino = "Teste"
+    
+    override func setUp() {
+               super.setUp()
+           let treino = TreinosScreen()
+        if(treino.app.staticTexts[nomeTreino].exists) {
+            treino.apagarTreino(tituloDoTreino: nomeTreino)
+        }
+           criarTreino = treino.addTreino()
+       }
+    
     func testCadastrarTreino() {
-        _ = treinos.addTreino().cadastrarTreino(nome: "Teste", diaInicio: "1", mesInicio: "setembro", anoInicio: "2019", diaFinal: "1", mesFinal: "novembro", anoFinal: "2019", tipo: "ABC")
+        _ = criarTreino.cadastrarTreino(nome: nomeTreino, diaInicio: "1", mesInicio: "setembro", anoInicio: "2019", diaFinal: "1", mesFinal: "novembro", anoFinal: "2019", tipo: "ABC")
+        XCTAssertTrue(app.staticTexts[nomeTreino].exists)
     }
     
     func testCadastrarTreinoSemNome() {
-        let cadastro = treinos.addTreino()
-        _ = cadastro.cadastrarTreino(nome: "", diaInicio: "1", mesInicio: "setembro", anoInicio: "2019", diaFinal: "1", mesFinal: "novembro", anoFinal: "2019", tipo: "ABC")
-        //XCTAssertTrue(app.staticTexts["Esse campo não pode ser vazio!"].exists)
+        _ = criarTreino.cadastrarTreino(nome: "", diaInicio: "1", mesInicio: "setembro", anoInicio: "2019", diaFinal: "1", mesFinal: "novembro", anoFinal: "2019", tipo: "ABC")
+        XCTAssertTrue(criarTreino.mensagemDeErroNomeVazio.exists)
+    }
+    
+    func testCadastrarTreinoSemDataDeInicio() {
+        _ = criarTreino.inserirNomeDoTreino(nome: "Teste 2")
+            .inserirDataFinal(diaFinal: "30", mesFinal: "novembro", anoFinal: "2019")
+            .escolherTipoDoTreino(tipo: "A/B/C")
+            .botaoSalvarTreino()
+        XCTAssertTrue(criarTreino.mensagemDeErroDataIVazio.exists)
     }
 }

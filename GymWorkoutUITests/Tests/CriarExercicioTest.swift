@@ -11,24 +11,35 @@ import XCTest
 class CriarExercicioTest: BaseTest {
     
     lazy var criarExercicio = CriarExercicioScreen()
+    let nomeExercicio = "Supino"
+    let treinoParaCriarExercicio = "Treino Para Criar Exercicio"
     
     override func setUp() {
             super.setUp()
-        var criarTreino = TreinosScreen()
-        if(!app.staticTexts["Treino Inicial"].exists) {
-            criarTreino = criarTreino.addTreino().cadastrarTreino(nome: "Treino Inicial", diaInicio: "1", mesInicio: "outubro", anoInicio: "2019", diaFinal: "15", mesFinal: "dezembro", anoFinal: "2019", tipo: "AB")
+        var treino = TreinosScreen()
+        if(!treino.app.staticTexts[treinoParaCriarExercicio].exists) {
+            treino = treino.addTreino().cadastrarTreino(nome: treinoParaCriarExercicio, diaInicio: "1", mesInicio: "outubro", anoInicio: "2019", diaFinal: "15", mesFinal: "dezembro", anoFinal: "2019", tipo: "AB")
         }
-        _ = criarTreino.abrirTreinoParaCadastrarExercicio(tituloDoTreino: "Treino Inicial")
+        let exercicio = treino.abrirTreinoParaCadastrarExercicio(tituloDoTreino: treinoParaCriarExercicio)
+        
+        if(exercicio.app.staticTexts["Supino"].exists) {
+            exercicio.apagarExercicio(nomeDoExercicio: "Supino")
+        }
+        exercicio.addExercicio()
     }
     
-    func testCriarExercicioTreinoA() {
-        _ = ExercicioScreen().addExercicio()
-        _ = criarExercicio.cadastrarExercicio(nome: "Supino", series: "3", repeticoes: "15", peso: 100)
+    func testCriarExercicioTreino() {
+        _ = criarExercicio.cadastrarExercicio(nome: nomeExercicio, series: "3", repeticoes: "15", peso: 100)
+        XCTAssertTrue(app.staticTexts[nomeExercicio].exists)
     }
     
-    func testCriarExercicioTreinoB() {
-        _ = app.buttons["B"].tap()
-        _ = ExercicioScreen().addExercicio()
-        _ = criarExercicio.cadastrarExercicio(nome: "Leg Press 45", series: "4", repeticoes: "10", peso: 100)
+    func testCriarExercicioSemNome() {
+        _ = criarExercicio.cadastrarExercicio(nome: "", series: "4", repeticoes: "10", peso: 100)
+        XCTAssertTrue(criarExercicio.mensagemDeErroNomeVazio.exists)
     }
+    
+    func testCriarExercicioSemRepeticoes() {
+           _ = criarExercicio.cadastrarExercicio(nome: "Rosca Direta", series: "4", repeticoes: "", peso: 100)
+        XCTAssertTrue(criarExercicio.mensagemDeErroRepeticoesVazio.exists)
+       }
 }

@@ -16,7 +16,9 @@ class TreinosTest: BaseTest {
     
     override func setUp() {
         super.setUp()
-        _ = treinos.addTreino().cadastrarTreino(nome: nomeTreino, diaInicio: "1", mesInicio: "outubro", anoInicio: "2019", diaFinal: "15", mesFinal: "dezembro", anoFinal: "2019", tipo: "AB")
+        if(!treinos.treinoInicial.exists) {
+            _ = treinos.addTreino().cadastrarTreino(nome: nomeTreino, diaInicio: "1", mesInicio: "outubro", anoInicio: "2019", diaFinal: "15", mesFinal: "dezembro", anoFinal: "2019", tipo: "AB")
+        }
     }
     
     func testApagarTreino() {

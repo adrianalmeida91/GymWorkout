@@ -17,7 +17,7 @@ class SplashViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        DispatchQueue.background(delay: 2.0, completion:{
+        DispatchQueue.background(delay: 5.0, completion:{
             self.showWorkout()
         })
     }

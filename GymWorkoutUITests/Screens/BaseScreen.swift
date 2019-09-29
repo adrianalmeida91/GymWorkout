@@ -33,4 +33,8 @@ extension BaseScreen {
         app.datePickers.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: mes)
         app.datePickers.pickerWheels.element(boundBy: 2).adjust(toPickerWheelValue: ano)
     }
+    
+    func waitForExpectation(object:Any?, time: Double, safe: Bool = false) {
+          _ = XCTWaiter().wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == true"), object: object)], timeout: time)
+      }
 }
