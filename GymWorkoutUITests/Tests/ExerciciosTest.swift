@@ -24,7 +24,6 @@ class ExerciciosTest: BaseTest {
     
     func testVerificarSeColunaBEstaAtivaAoClicarEColunaANaoEsta() {
         _ = app.buttons["B"].tap()
-        XCTAssertTrue(app.buttons["B"].isHittable)
         XCTAssertFalse(app.buttons["A"].isSelected)
     }
     
@@ -33,5 +32,6 @@ class ExerciciosTest: BaseTest {
         telaDeExercicio = telaDeExercicio.addExercicio()
         .cadastrarExercicio(nome: "Leg Press 45", series: "4", repeticoes: "10", peso: 100)
         XCTAssertTrue(app.buttons["B"].isSelected && app.staticTexts[nomeDoTreino].exists)
+                
     }
 }
