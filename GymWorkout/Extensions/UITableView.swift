@@ -14,7 +14,7 @@ extension UITableView {
         let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
         let messageLabel = UILabel()
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        messageLabel.textColor = UIColor.black
+        messageLabel.textColor = UIColor.white
         emptyView.addSubview(messageLabel)
         messageLabel.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor).isActive = true
         messageLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
@@ -28,6 +28,5 @@ extension UITableView {
     func restore() {
         self.backgroundView = nil
         self.separatorStyle = .singleLine
-        self.separatorColor = UIColor.black
     }
 }

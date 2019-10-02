@@ -12,9 +12,9 @@ import RxCocoa
 
 class WorkoutBuildViewController: BaseViewController {
 
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var startTextField: UITextField!
-    @IBOutlet weak var endTextField: UITextField!
+    @IBOutlet weak var nameTextField: CustomTextField!
+    @IBOutlet weak var startTextField: CustomTextField!
+    @IBOutlet weak var endTextField: CustomTextField!
     @IBOutlet weak var saveWorkout: UIBarButtonItem!
     @IBOutlet weak var radioButtonGroup: RadioButtonView!
     @IBOutlet weak var nameErrorLabel: UILabel!
@@ -33,6 +33,7 @@ class WorkoutBuildViewController: BaseViewController {
 
     func setupViews() {
         nameTextField.delegate = self
+        nameTextField.tintColor = UIColor.white
         setupPicker(textField: self.startTextField)
         setupPicker(textField: self.endTextField)
         nameTextField.rx.text.orEmpty.bind(to: viewModel.workoutName).disposed(by: disposeBag)
@@ -57,7 +58,7 @@ class WorkoutBuildViewController: BaseViewController {
         }.disposed(by: disposeBag)
     }
 
-    func setupPicker(textField: UITextField) {
+    func setupPicker(textField: CustomTextField) {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
@@ -79,7 +80,7 @@ class WorkoutBuildViewController: BaseViewController {
         formatter.timeStyle = DateFormatter.Style.none
         formatter.locale = Locale.init(identifier: "pt_BR")
         if let activeTextField = activeTextField {
-            activeTextField.text = formatter.string(from: sender.date)
+            activeTextField.attributedText = NSAttributedString(string: formatter.string(from: sender.date), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }
     }
 

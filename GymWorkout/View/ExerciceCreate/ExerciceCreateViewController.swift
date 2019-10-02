@@ -13,9 +13,9 @@ import RxCocoa
 class ExerciceCreateViewController: BaseViewController {
 
     @IBOutlet weak var saveExercice: UIBarButtonItem!
-    @IBOutlet weak var exerciceName: UITextField!
-    @IBOutlet weak var exerciceSeries: UITextField!
-    @IBOutlet weak var exerciceRepetitions: UITextField!
+    @IBOutlet weak var exerciceName: CustomTextField!
+    @IBOutlet weak var exerciceSeries: CustomTextField!
+    @IBOutlet weak var exerciceRepetitions: CustomTextField!
     @IBOutlet weak var exerciceWeight: CustomSliderView!
     @IBOutlet weak var nameErrorLabel: UILabel!
     @IBOutlet weak var seriesErrorLabel: UILabel!
@@ -36,6 +36,9 @@ class ExerciceCreateViewController: BaseViewController {
         exerciceName.delegate = self
         exerciceSeries.delegate = self
         exerciceRepetitions.delegate = self
+        exerciceName.tintColor = UIColor.white
+        exerciceSeries.tintColor = UIColor.white
+        exerciceRepetitions.tintColor = UIColor.white
         exerciceName.rx.text.orEmpty.bind(to: viewModel.exerciceName).disposed(by: disposeBag)
         exerciceSeries.rx.text.orEmpty.bind(to: viewModel.exerciceSeries).disposed(by: disposeBag)
         exerciceRepetitions.rx.text.orEmpty.bind(to: viewModel.exerciceRepetitions).disposed(by: disposeBag)

@@ -27,12 +27,14 @@
                         <constraint firstAttribute="width" constant="80" id="pXp-sQ-vMq"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="200" minimumValueImage="light_weight_icon" maximumValueImage="heavy_weight_icon" translatesAutoresizingMaskIntoConstraints="NO" id="29U-BC-DjG">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="29U-BC-DjG">
                     <rect key="frame" x="-2" y="0.0" width="331" height="51"/>
                     <accessibility key="accessibilityConfiguration" identifier="sliderPeso"/>
+                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </slider>
             </subviews>
             <constraints>
@@ -48,8 +50,4 @@
             <point key="canvasLocation" x="47.826086956521742" y="72.554347826086968"/>
         </view>
     </objects>
-    <resources>
-        <image name="heavy_weight_icon" width="24" height="24"/>
-        <image name="light_weight_icon" width="24" height="24"/>
-    </resources>
 </document>

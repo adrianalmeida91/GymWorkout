@@ -37,6 +37,8 @@ class CustomSliderView: UIView {
     }
 
     func setupView() {
+        weightSlider.minimumValueImage = UIImage(named: R.image.light_weight_icon.name)?.fillAlpha(fillColor: UIColor.white)
+        weightSlider.maximumValueImage = UIImage(named: R.image.heavy_weight_icon.name)?.fillAlpha(fillColor: UIColor.white)
         weightSlider.rx.value.subscribe(onNext: { value in
             self.weightValue.text = String(Int(value))
         }).disposed(by: disposeBag)

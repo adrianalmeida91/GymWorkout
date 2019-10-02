@@ -13,15 +13,14 @@ target 'GymWorkout' do
   pod 'RealmSwift', '~> 3.13'
   pod 'Swinject', '2.5.0'
   pod 'SwinjectAutoregistration', '2.5.0'
+end
 
-  target 'GymWorkoutTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+target 'GymWorkoutTests' do
+  inherit! :search_paths
+  # Pods for testing
+end
 
-  target 'GymWorkoutUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'GymWorkoutUITests' do
+  inherit! :search_paths
+  # Pods for testing
 end

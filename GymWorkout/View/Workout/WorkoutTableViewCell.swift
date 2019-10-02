@@ -11,6 +11,7 @@ import UIKit
 class WorkoutTableViewCell: UITableViewCell {
 
     @IBOutlet weak var workoutName: UILabel!
+    @IBOutlet weak var workoutType: UILabel!
     @IBOutlet weak var workoutStart: UILabel!
     @IBOutlet weak var workoutEnd: UILabel!
 
@@ -18,5 +19,13 @@ class WorkoutTableViewCell: UITableViewCell {
         self.workoutName.text = workout.name
         self.workoutStart.text = workout.startDate
         self.workoutEnd.text = workout.endDate
+        switch workout.type {
+        case RadioButtonEnum.abc:
+            self.workoutType.text = "A/B/C"
+        case RadioButtonEnum.abcd:
+            self.workoutType.text = "A/B/C/D"
+        default:
+            self.workoutType.text = "A/B"
+        }
     }
 }

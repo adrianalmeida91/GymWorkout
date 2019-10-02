@@ -24,8 +24,8 @@ class AskNewWeightAlert: CustomAlert, CustomAlertProtocol {
     func initialize(title: String, message: String) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
-        initialize(title: title.toAttributedText(),
-                   message: message.toAttributedText(),
+        initialize(title: title.toAttributedText(attributes: [NSAttributedString.Key.foregroundColor: SystemColor.primaryColor.uiColor]),
+                   message: message.toAttributedText(attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]),
                    isTextField: true,
                    type: ModalButtonType.horizontal,
                    firstButtonText: "Cancelar".toAttributedText(attributes: CustomFont.AskNewWieghtAlerts.regularAlertButton),
