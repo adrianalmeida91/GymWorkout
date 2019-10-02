@@ -213,7 +213,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vb1-Es-fEo" customClass="RadioButtonView" customModule="GymWorkout" customModuleProvider="target">
-                                <rect key="frame" x="20" y="575.5" width="374" height="51.5"/>
+                                <rect key="frame" x="20" y="619.5" width="374" height="56"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.2003641977" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -320,9 +320,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bq4-mc-ZEx" customClass="CustomSliderView" customModule="GymWorkout" customModuleProvider="target">
-                                <rect key="frame" x="20" y="576.5" width="374" height="46"/>
-                            </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campo Nome não pode ser vazio!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcK-3R-lIk">
                                 <rect key="frame" x="143.5" y="238" width="258.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -353,6 +350,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bq4-mc-ZEx" customClass="CustomSliderView" customModule="GymWorkout" customModuleProvider="target">
+                                <rect key="frame" x="20" y="620.5" width="374" height="41.5"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.2003641977" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
