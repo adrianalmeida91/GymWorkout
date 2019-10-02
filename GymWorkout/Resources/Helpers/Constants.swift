@@ -15,10 +15,11 @@ struct Constants {
         static let dialogViewWidthDefaultMargin = 96
         static let backgroundAlph = 0.6
         static let titleTopMargin = 18
-        static let titleSize = 17.0
+        static let titleSize = 20.0
+        static let messageSize = 18.0
         static let leftPadding = 16
         static let margin = 32
-        static let labelsHeight = 30
+        static let labelsHeight = 60
         static let textFieldWidth = 60
         static let spaceBetweenLabels = 2
         static let separatorWidth = 0.5

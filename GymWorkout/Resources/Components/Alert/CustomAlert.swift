@@ -21,7 +21,7 @@ class CustomAlert: UIView, Modal {
     private var dialogViewWidth = CGFloat()
     private var titleLabel = UILabel()
     private var messageLabel = UITextView()
-    internal var textfield = UITextField()
+    internal var textfield = CustomTextField()
     private var firstButton: UIButton?
     private var secondButton: UIButton?
     var isTextField = false
@@ -59,7 +59,7 @@ class CustomAlert: UIView, Modal {
         self.isTextField = isTextField
         dialogView.clipsToBounds = true
         dialogViewWidth = viewWidth ?? frame.width - CGFloat(Constants.Modal.dialogViewWidthDefaultMargin)
-        dialogView.backgroundColor = UIColor.init(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
+        dialogView.backgroundColor = SystemColor.appBackground.uiColor
         setupBackground()
         addTitle(title: title)
         addMessage(message: message)
@@ -103,9 +103,9 @@ class CustomAlert: UIView, Modal {
                                                 height: CGFloat(Constants.Modal.labelsHeight)))
         messageLabel.backgroundColor = UIColor.clear
         messageLabel.attributedText = message
+        messageLabel.font = UIFont.systemFont(ofSize: CGFloat(Constants.Modal.messageSize))
         messageLabel.textAlignment = .center
         messageLabel.isEditable = false
-        messageLabel.tintColor = UIColor.gray
         messageLabel.isScrollEnabled = false
         let fixedWidth = messageLabel.frame.size.width
         let newSize = messageLabel.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
@@ -115,14 +115,14 @@ class CustomAlert: UIView, Modal {
 
     private func addTextField() {
         if !isTextField { return }
-        textfield = UITextField(frame: CGRect(x: dialogViewWidth / 2 - CGFloat(Constants.Modal.textFieldWidth) / 2,
+        textfield = CustomTextField(frame: CGRect(x: CGFloat(0),
                                               y: messageLabel.text.isEmpty ? titleLabel.frame.maxY : messageLabel.frame.maxY + CGFloat(Constants.Modal.spaceBetweenLabels),
-                                              width: CGFloat(Constants.Modal.textFieldWidth),
+                                              width: dialogViewWidth,
                                               height: CGFloat(Constants.Modal.labelsHeight)))
-        textfield.backgroundColor = UIColor.white
-        textfield.borderStyle = UITextField.BorderStyle.roundedRect
+        textfield.backgroundColor = SystemColor.backgroundDefaultGray.uiColor
         textfield.textAlignment = .center
-        textfield.tintColor = UIColor.black
+        textfield.tintColor = UIColor.white
+        textfield.textColor = UIColor.white
         textfield.autocorrectionType = UITextAutocorrectionType.no
         textfield.keyboardType = UIKeyboardType.default
         textfield.returnKeyType = UIReturnKeyType.done

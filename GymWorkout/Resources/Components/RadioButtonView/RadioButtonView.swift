@@ -35,7 +35,17 @@ class RadioButtonView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        setupViews()
         setupSubscribe()
+    }
+
+    func setupViews() {
+        radioButtonAB.setImage(UIImage(named: R.image.unchecked_2.name)?.fillAlpha(fillColor: UIColor.white), for: .normal)
+        radioButtonAB.setImage(UIImage(named: R.image.checked_2.name)?.fillAlpha(fillColor: UIColor.white), for: .selected)
+        radioButtonABC.setImage(UIImage(named: R.image.unchecked_2.name)?.fillAlpha(fillColor: UIColor.white), for: .normal)
+        radioButtonABC.setImage(UIImage(named: R.image.checked_2.name)?.fillAlpha(fillColor: UIColor.white), for: .selected)
+        radioButtonABCD.setImage(UIImage(named: R.image.unchecked_2.name)?.fillAlpha(fillColor: UIColor.white), for: .normal)
+        radioButtonABCD.setImage(UIImage(named: R.image.checked_2.name)?.fillAlpha(fillColor: UIColor.white), for: .selected)
     }
 
     func setupSubscribe() {

@@ -25,10 +25,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="400" height="56"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95J-22-X4N">
-                            <rect key="frame" x="0.0" y="0.0" width="53" height="56"/>
-			    <accessibility key="accessibilityConfiguration" identifier="AB"/>
+                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                            <accessibility key="accessibilityConfiguration" identifier="AB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="A/B" image="unchecked_2">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <state key="selected" image="checked_2"/>
                             <connections>
@@ -36,10 +37,11 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VE-rm-cs4">
-                            <rect key="frame" x="146.66666666666666" y="0.0" width="71" height="56"/>
-			    <accessibility key="accessibilityConfiguration" identifier="ABC"/>
+                            <rect key="frame" x="143" y="0.0" width="75" height="56"/>
+                            <accessibility key="accessibilityConfiguration" identifier="ABC"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="A/B/C" image="unchecked_2">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <state key="selected" image="checked_2"/>
                             <connections>
@@ -47,10 +49,11 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol7-Sr-ZBr">
-                            <rect key="frame" x="311" y="0.0" width="89" height="56"/>
-			    <accessibility key="accessibilityConfiguration" identifier="ABCD"/>
+                            <rect key="frame" x="305" y="0.0" width="95" height="56"/>
+                            <accessibility key="accessibilityConfiguration" identifier="ABCD"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="A/B/C/D" image="unchecked_2">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <state key="selected" image="checked_2"/>
                             <connections>

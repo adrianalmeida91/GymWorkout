@@ -40,6 +40,8 @@ class ExercicesViewController: BaseViewController {
     }
 
     func setupSegmentedControl() {
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .normal)
         var segmentesTitle: [String] = []
         switch workout?.type {
         case .some(.ab):
@@ -71,7 +73,7 @@ class ExercicesViewController: BaseViewController {
 
     func setupTableView() {
         exercicesTableView.backgroundColor = UIColor.clear
-        exercicesTableView.separatorColor = UIColor.black
+        exercicesTableView.separatorColor = SystemColor.lineSeparator.uiColor
         exercicesTableView.dataSource = self
         exercicesTableView.delegate = self
         exercicesTableView.register(R.nib.exerciceTableViewCell)
@@ -119,9 +121,12 @@ extension ExercicesViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.exerciceTableViewCell, for: indexPath)!
+        if (indexPath.row % 2 == 0) {
+            cell.backgroundColor = SystemColor.backgroundDefaultGray.uiColor
+        } else {
+            cell.backgroundColor = UIColor.clear
+        }
         cell.setupExerciceCell(exercice: self.exercices[indexPath.row])
-        cell.backgroundColor = UIColor.clear
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
 
@@ -152,7 +157,8 @@ extension ExercicesViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = AskNewWeightAlert(title: "Novo peso", message: "Insira novo peso para o exercício: \(self.exercices[indexPath.row].name).")
+        tableView.deselectRow(at: indexPath, animated: false)
+        let alert = AskNewWeightAlert(title: "Novo peso", message: "Insira novo peso para o exercício: \(self.exercices[indexPath.row].name)")
         alert.show(navigationController: navigationController!, onConfirm: { value in
             if let workout = self.workout {
                 self.viewModel.updateExerciceWeight(workout: workout, exerciceIndex: workout.exercices.index(of: self.exercices[indexPath.row]) ?? 0, value: value).subscribe({ result in

@@ -9,6 +9,12 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.primaryNavigationBar()
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
     func showWorkout() {
         let workoutViewController = navigationController?.viewControllers.filter { $0 is WorkoutViewController }.first
         if let workoutViewController = workoutViewController {

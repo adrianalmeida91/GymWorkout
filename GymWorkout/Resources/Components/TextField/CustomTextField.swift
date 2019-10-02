@@ -41,6 +41,26 @@ class CustomTextField: UITextField, CustomTextFieldProtocol {
     var hasFocus: Bool
     var errorView: UILabel?
 
+    @IBInspectable var cornerRadius: Double = 0.0 {
+        didSet {
+           self.layer.cornerRadius = CGFloat(cornerRadius)
+         }
+    }
+
+    @IBInspectable var borderWidth: Double = 0.0 {
+          didSet {
+           self.layer.borderWidth = CGFloat(borderWidth)
+          }
+    }
+
+    @IBInspectable var borderColor: UIColor = UIColor.clear {
+         didSet {
+            self.layer.borderColor = borderColor.cgColor
+         }
+    }
+
+    let textPadding: UIEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+
     override init(frame: CGRect) {
         self.border = CALayer()
         self.hasError = false
@@ -53,5 +73,20 @@ class CustomTextField: UITextField, CustomTextFieldProtocol {
         self.hasError = false
         self.hasFocus = false
         super.init(coder: aDecoder)
+        self.backgroundColor = SystemColor.backgroundDefaultGray.uiColor
+        self.textColor = SystemColor.textfieldTextColorDefault.uiColor
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: SystemColor.textfieldPlaceholderDefault.uiColor])
+    }
+
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: textPadding)
+    }
+
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: textPadding)
+    }
+
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: textPadding)
     }
 }

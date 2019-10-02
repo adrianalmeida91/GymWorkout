@@ -41,7 +41,7 @@ class DatabaseService {
 
     func loadWorkouts() -> Results<Workout> {
         let realm = RealmManager.createRealmInstance()
-        return realm.objects(Workout.self)
+        return realm.objects(Workout.self).sorted(byKeyPath: "id", ascending: false)
     }
 
     func deleteWorkout(workout: Workout) -> Completable {

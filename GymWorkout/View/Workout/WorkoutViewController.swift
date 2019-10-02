@@ -31,14 +31,14 @@ class WorkoutViewController: BaseViewController {
             self.showWorkoutBuild()
         }.disposed(by: disposeBag)
         viewModel.workouts.drive(onNext: { workouts in
-            self.workouts = workouts.reversed()
+            self.workouts = workouts
             self.workoutsTableView.reloadData()
         }).disposed(by: disposeBag)
     }
 
     func setupTableView() {
         workoutsTableView.backgroundColor = UIColor.clear
-        workoutsTableView.separatorColor = UIColor.black
+        workoutsTableView.separatorColor = SystemColor.lineSeparator.uiColor
         workoutsTableView.dataSource = self
         workoutsTableView.delegate = self
         workoutsTableView.register(R.nib.workoutTableViewCell)
@@ -63,8 +63,11 @@ extension WorkoutViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.workoutTableViewCell, for: indexPath)!
         cell.setLabels(workout: self.workouts[indexPath.row])
-        cell.backgroundColor = UIColor.clear
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        if (indexPath.row % 2 == 0) {
+            cell.backgroundColor = SystemColor.backgroundDefaultGray.uiColor
+        } else {
+            cell.backgroundColor = UIColor.clear
+        }
         return cell
     }
 
@@ -94,6 +97,7 @@ extension WorkoutViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         showExercices(workout: workouts[indexPath.row])
     }
 }
