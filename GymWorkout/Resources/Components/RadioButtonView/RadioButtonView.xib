@@ -43,7 +43,7 @@
                             <state key="normal" title="A/B/C" image="unchecked_2">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
-                            <state key="selected" image="checked_3"/>
+                            <state key="selected" image="checked_2"/>
                             <connections>
                                 <action selector="radioButtonPressed:" destination="-1" eventType="touchUpInside" id="4ay-je-SYu"/>
                             </connections>
@@ -78,7 +78,6 @@
     </objects>
     <resources>
         <image name="checked_2" width="24" height="24"/>
-        <image name="checked_3" width="24" height="24"/>
         <image name="unchecked_2" width="24" height="24"/>
     </resources>
 </document>
