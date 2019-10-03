@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="56"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="xKN-uR-fsT">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xKN-uR-fsT">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="56"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95J-22-X4N">

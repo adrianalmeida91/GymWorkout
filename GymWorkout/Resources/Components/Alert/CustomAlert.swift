@@ -124,7 +124,7 @@ class CustomAlert: UIView, Modal {
         textfield.tintColor = UIColor.white
         textfield.textColor = UIColor.white
         textfield.autocorrectionType = UITextAutocorrectionType.no
-        textfield.keyboardType = UIKeyboardType.default
+        textfield.keyboardType = .numbersAndPunctuation
         textfield.returnKeyType = UIReturnKeyType.done
         dialogView.addSubview(textfield)
     }
@@ -163,7 +163,7 @@ class CustomAlert: UIView, Modal {
             separatorLineView.frame.origin = CGPoint(x: 0, y: view.frame.maxY + padding)
             separatorLineView.frame.size = CGSize(width: dialogViewWidth, height: CGFloat(Constants.Modal.separatorHeight))
         }
-        separatorLineView.backgroundColor = UIColor.black.withAlphaComponent(CGFloat(Constants.Modal.separatorAlphaComponent))
+        separatorLineView.backgroundColor = SystemColor.lineSeparator.uiColor
         dialogView.addSubview(separatorLineView)
         return separatorLineView
     }

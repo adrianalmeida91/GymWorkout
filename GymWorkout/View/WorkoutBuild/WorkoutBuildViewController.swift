@@ -62,7 +62,7 @@ class WorkoutBuildViewController: BaseViewController {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
-        let done = UIBarButtonItem(title: "OK", style: UIBarButtonItem.Style.done, target: nil, action: #selector(donePressed(sender:)))
+        let done = UIBarButtonItem(title: "OK", style: UIBarButtonItem.Style.done, target: nil, action: #selector(textField.actionKeyboardButtonTapped(sender:)))
         toolbar.setItems([flexible, done], animated: false)
         let datePicker = UIDatePicker()
         datePicker.locale = Locale.init(identifier: "pt_BR")
@@ -116,14 +116,13 @@ extension WorkoutBuildViewController: UITextFieldDelegate {
         }
     }
 
-    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         clearTextFields(textField)
-        return true
+        let customTextField = textField as! CustomTextField
+        if (customTextField.lenght == 0) { return true }
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= customTextField.lenght
     }
 
     @objc func donePressed(sender: Any) {
