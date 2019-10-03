@@ -35,11 +35,20 @@ extension CustomTextFieldProtocol where Self: UITextField {
     }
 }
 
-class CustomTextField: UITextField, CustomTextFieldProtocol {
+class CustomTextField: UITextField, CustomTextFieldProtocol  {
     var border: CALayer
     var hasError: Bool
     var hasFocus: Bool
     var errorView: UILabel?
+    var lenght: Int = 0
+
+    @objc
+    @IBOutlet open weak var nextResponderField: UIResponder?
+
+    @IBInspectable var maxLenght: Int {
+        get { return lenght }
+        set{ lenght = newValue }
+    }
 
     @IBInspectable var cornerRadius: Double = 0.0 {
         didSet {
@@ -66,6 +75,7 @@ class CustomTextField: UITextField, CustomTextFieldProtocol {
         self.hasError = false
         self.hasFocus = false
         super.init(frame: frame)
+        self.initialize()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -73,9 +83,14 @@ class CustomTextField: UITextField, CustomTextFieldProtocol {
         self.hasError = false
         self.hasFocus = false
         super.init(coder: aDecoder)
+        self.initialize()
+    }
+
+    func initialize() {
         self.backgroundColor = SystemColor.backgroundDefaultGray.uiColor
         self.textColor = SystemColor.textfieldTextColorDefault.uiColor
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: SystemColor.textfieldPlaceholderDefault.uiColor])
+        self.addTarget(self, action: #selector(actionKeyboardButtonTapped(sender:)), for: .editingDidEndOnExit)
     }
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -88,5 +103,42 @@ class CustomTextField: UITextField, CustomTextFieldProtocol {
 
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: textPadding)
+    }
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if action == #selector(paste(_:)) ||
+            action == #selector(cut(_:)) ||
+            action == #selector(copy(_:)) ||
+            action == #selector(select(_:)) ||
+            action == #selector(selectAll(_:)) ||
+            action == #selector(delete(_:)) ||
+            action == #selector(makeTextWritingDirectionLeftToRight(_:)) ||
+            action == #selector(makeTextWritingDirectionRightToLeft(_:)) ||
+            action == #selector(toggleBoldface(_:)) ||
+            action == #selector(toggleItalics(_:)) ||
+            action == #selector(toggleUnderline(_:)) {
+            return false
+        }
+        return super.canPerformAction(action, withSender: sender)
+    }
+
+    @objc func actionKeyboardButtonTapped(sender: UITextField) {
+        switch nextResponderField {
+        case let button as UIButton where button.isEnabled:
+            button.sendActions(for: .touchUpInside)
+        case .some(let responder):
+            responder.becomeFirstResponder()
+        default:
+            resignFirstResponder()
+        }
+    }
+}
+
+extension CustomTextField: UITextViewDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (self.lenght == 0) { return true }
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= self.lenght
     }
 }

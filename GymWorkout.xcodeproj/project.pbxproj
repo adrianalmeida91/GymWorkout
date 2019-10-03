@@ -100,13 +100,6 @@
 			remoteGlobalIDString = 0AF78E01231D5842001682A8;
 			remoteInfo = GymWorkout;
 		};
-		F307FD122342477500B45AE9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0AF78DFA231D5842001682A8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0AF78E01231D5842001682A8;
-			remoteInfo = GymWorkout;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -210,13 +203,6 @@
 			files = (
 				48D756C7167A1CB6E3D184E5 /* libPods-GymWorkoutUITests.a in Frameworks */,
 				ACB1769224D7916E552C9259 /* libPods-GymWorkoutUITests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCE2FA61C31129F484EF846E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,23 +605,6 @@
 			productReference = 0AF78E21231D5844001682A8 /* GymWorkoutUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		F307FD0C2342477500B45AE9 /* GymWorkoutUITests2 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F307FD142342477500B45AE9 /* Build configuration list for PBXNativeTarget "GymWorkoutUITests2" */;
-			buildPhases = (
-				F307FD092342477500B45AE9 /* Sources */,
-				F307FD0B2342477500B45AE9 /* Resources */,
-				BCE2FA61C31129F484EF846E /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F307FD132342477500B45AE9 /* PBXTargetDependency */,
-			);
-			name = GymWorkoutUITests2;
-			productName = GymWorkoutUITests2;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -657,10 +626,6 @@
 						CreatedOnToolsVersion = 10.3;
 						TestTargetID = 0AF78E01231D5842001682A8;
 					};
-					F307FD0C2342477500B45AE9 = {
-						CreatedOnToolsVersion = 11.0;
-						TestTargetID = 0AF78E01231D5842001682A8;
-					};
 				};
 			};
 			buildConfigurationList = 0AF78DFD231D5842001682A8 /* Build configuration list for PBXProject "GymWorkout" */;
@@ -679,7 +644,6 @@
 				0AF78E01231D5842001682A8 /* GymWorkout */,
 				0AF78E15231D5844001682A8 /* GymWorkoutTests */,
 				0AF78E20231D5844001682A8 /* GymWorkoutUITests */,
-				F307FD0C2342477500B45AE9 /* GymWorkoutUITests2 */,
 			);
 		};
 /* End PBXProject section */
@@ -724,13 +688,6 @@
 				0A28C8BB234514C900376192 /* LaunchScreen.storyboard in Resources */,
 				0A28C8BC234514C900376192 /* Storyboard.storyboard in Resources */,
 				0A28C8BD234514C900376192 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F307FD0B2342477500B45AE9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,13 +869,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F307FD092342477500B45AE9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -931,11 +881,6 @@
 			isa = PBXTargetDependency;
 			target = 0AF78E01231D5842001682A8 /* GymWorkout */;
 			targetProxy = 0AF78E22231D5844001682A8 /* PBXContainerItemProxy */;
-		};
-		F307FD132342477500B45AE9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0AF78E01231D5842001682A8 /* GymWorkout */;
-			targetProxy = F307FD122342477500B45AE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1180,46 +1125,6 @@
 			};
 			name = Release;
 		};
-		F307FD152342477500B45AE9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M7A3YKGSM2;
-				INFOPLIST_FILE = GymWorkoutUITests2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.daniela.GymWorkoutUITests2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GymWorkout;
-			};
-			name = Debug;
-		};
-		F307FD162342477500B45AE9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M7A3YKGSM2;
-				INFOPLIST_FILE = GymWorkoutUITests2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.daniela.GymWorkoutUITests2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GymWorkout;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1255,15 +1160,6 @@
 			buildConfigurations = (
 				0AF78E31231D5844001682A8 /* Debug */,
 				0AF78E32231D5844001682A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F307FD142342477500B45AE9 /* Build configuration list for PBXNativeTarget "GymWorkoutUITests2" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F307FD152342477500B45AE9 /* Debug */,
-				F307FD162342477500B45AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

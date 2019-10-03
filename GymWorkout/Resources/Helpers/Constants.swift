@@ -25,6 +25,6 @@ struct Constants {
         static let separatorWidth = 0.5
         static let separatorHeight = 0.5
         static let separatorAlphaComponent = 0.38
-        static let buttonHeight = 44
+        static let buttonHeight = 60
     }
 }
